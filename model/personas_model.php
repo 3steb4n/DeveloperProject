@@ -12,7 +12,7 @@ class VerificarUsuarios{
         require_once("../db/db.php");
         $instanciaClase = new Conectar();
         $instanciaMetodo = $instanciaClase->Conexion();
-        if($queryConsultaUsuarios = mysqli_query($instanciaMetodo, "SELECT * FROM USUARIOS WHERE EMAIL='$email' and CLAVE='$clave'")){
+        if($queryConsultaUsuarios = mysqli_query($instanciaMetodo, "SELECT * FROM USUARIO WHERE CORREO='$email' and CLAVE='$clave'")){
             if(mysqli_num_rows($queryConsultaUsuarios) > 0){
                 while($userData = $queryConsultaUsuarios->fetch_assoc()){
                     $this->datosUsuarios[] = $userData;
