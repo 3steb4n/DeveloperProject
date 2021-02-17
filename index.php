@@ -44,7 +44,7 @@
                                             <input type="password" class="form-control form-control-user"
                                                 id="exampleInputPassword" name="exampleInputPassword" placeholder="Password">
                                         </div>
-                                        <input type="button" value="Ingressssar" onclick="UserExists(exampleInputEmail.value, exampleInputPassword.value)">
+                                        <input type="button" value="Ingresar" onclick="UserExists(exampleInputEmail.value, exampleInputPassword.value)">
                                         <br>
                                         <label name="laberlError" id="labelError" style="color: red;"></label>
                                     </form>
