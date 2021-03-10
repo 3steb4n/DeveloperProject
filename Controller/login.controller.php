@@ -41,6 +41,8 @@ require_once 'Model/login.php';
 	    			if ($val->conta != 0) 
 	    			{
 	    				$val = $this->model->CargarPersona($alm);
+
+	    				$alm->nombre = $_SESSION['nombre'];
 	    				
 	    				header('Location: ?c=Dashboard');
 	    			}

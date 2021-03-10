@@ -23,5 +23,7 @@
         
         // Función para llamar las acciones a ejecutar
         call_user_func( array( $controller, $accion ) );
+
+        require_once "Controller/errors.controller.php";
     }
 ?>

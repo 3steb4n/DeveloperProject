@@ -31,11 +31,11 @@ CREATE TABLE `reporte` (
   `usuario_mod` varchar(100) NOT NULL,
   `fecha_mod` date NOT NULL,
   PRIMARY KEY (`id_reporte`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 /*Data for the table `reporte` */
 
-insert  into `reporte`(`id_reporte`,`tabla`,`accion`,`registro`,`registro_ant`,`usuario`,`fecha`,`usuario_mod`,`fecha_mod`) values (1,'Usuario','Insertar','Pepe','','root@localhost','2021-02-17','','0000-00-00');
+insert  into `reporte`(`id_reporte`,`tabla`,`accion`,`registro`,`registro_ant`,`usuario`,`fecha`,`usuario_mod`,`fecha_mod`) values (1,'Usuario','Insertar','Pepe','','root@localhost','2021-02-17','','0000-00-00'),(2,'Rol','Insertar','Administrador','','root@localhost','2021-03-02','','0000-00-00'),(3,'Usuario','Insertar','José','','root@localhost','2021-03-02','','0000-00-00'),(4,'Rol','Insertar','Usuario','','root@localhost','2021-03-09','','0000-00-00'),(5,'Usuario','Insertar','Bon','','root@localhost','2021-03-09','','0000-00-00'),(6,'Usuario','Insertar','Michael','','root@localhost','2021-03-09','','0000-00-00');
 
 /*Table structure for table `rol` */
 
@@ -46,9 +46,11 @@ CREATE TABLE `rol` (
   `nombre_rol` varchar(25) NOT NULL,
   `estado_rol` enum('Activo','Inactivo') NOT NULL,
   PRIMARY KEY (`id_rol`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 /*Data for the table `rol` */
+
+insert  into `rol`(`id_rol`,`nombre_rol`,`estado_rol`) values (1,'Administrador','Activo'),(2,'Usuario','Activo');
 
 /*Table structure for table `usuario` */
 
@@ -61,14 +63,15 @@ CREATE TABLE `usuario` (
   `correo` varchar(100) NOT NULL,
   `clave` varchar(255) NOT NULL,
   `id_rol` int(11) NOT NULL,
+  `estado` enum('Activo','Inactivo') NOT NULL,
   PRIMARY KEY (`id_usuario`),
   KEY `id_rol` (`id_rol`),
   CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`id_rol`) REFERENCES `rol` (`id_rol`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 /*Data for the table `usuario` */
 
-insert  into `usuario`(`id_usuario`,`nombre`,`apellido`,`correo`,`clave`,`id_rol`) values (1,'Pepe','pepe','test@gmail.com','123',0);
+insert  into `usuario`(`id_usuario`,`nombre`,`apellido`,`correo`,`clave`,`id_rol`,`estado`) values (1,'Pepe','pepe','test@gmail.com','123',1,'Activo'),(2,'José','Mora','jose@prueba.com','1234',1,'Activo'),(3,'Bon','Jovi','bonj@prueba.com','111',2,'Activo'),(4,'Michael','Smit','ms@prueba.com','478',2,'Activo'),(5,'Michael','Smit','ms@prueba.com','478',2,'Inactivo');
 
 /* Trigger structure for table `rol` */
 

@@ -77,7 +77,7 @@
 		{
 			try
 			{
-				$stm = $this->pdo->prepare("SELECT nombre, apellido, id_rol FROM usuario WHERE correo = ? AND clave = ?");
+				$stm = $this->pdo->prepare("SELECT id_usuario, nombre, apellido, id_rol FROM usuario WHERE correo = ? AND clave = ?");
 				$stm->execute(array($data->correo, $data->clave));
 
 				return $stm->fetch(PDO::FETCH_OBJ);
