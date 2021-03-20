@@ -9,7 +9,6 @@
 		public $apellido;
 		public $correo;
 		public $clave;
-		public $id_rol;
 
 		// Función Constructor
 		public function __CONSTRUCT()
@@ -77,7 +76,7 @@
 		{
 			try
 			{
-				$stm = $this->pdo->prepare("SELECT id_usuario, nombre, apellido, id_rol FROM usuario WHERE correo = ? AND clave = ?");
+				$stm = $this->pdo->prepare("SELECT id_usuario, nombre, apellido FROM usuario WHERE correo = ? AND clave = ?");
 				$stm->execute(array($data->correo, $data->clave));
 
 				return $stm->fetch(PDO::FETCH_OBJ);

@@ -1,7 +1,8 @@
-
+<?php 
+    include('layouts/header.php');
+?>
     <!-- Title Page-->
     <title>Dashboard</title>
-
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
@@ -345,3 +346,8 @@
 
     </div>
     <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <?php 
+        include('layouts/footer.php');
+    ?>

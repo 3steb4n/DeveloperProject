@@ -1,0 +1,1 @@
+<img src="assets/img/menu/alerta1.png"><h3><center>No Tiene Permisos para este Módulo</center></h3>

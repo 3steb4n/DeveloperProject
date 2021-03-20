@@ -1,5 +1,6 @@
+
     <!-- Title Page-->
-    <title>Roles</title>
+    <title>Permisos</title>
 
 
         <!-- Begin Page Content -->
@@ -8,10 +9,10 @@
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 class="h3 mb-0 text-gray-800">
-                    Roles
+                    Permisos
                 </h1>
                 <a href="?c=Rol&a=Crud" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                    <i class="fas fa-plus"></i> Rol
+                    <i class="fas fa-plus"></i> Permiso
                 </a>
             </div>
 
@@ -23,7 +24,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Lista de Roles</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Lista de Permisos</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -43,7 +44,7 @@
                                     <tbody>
                                         <?php foreach($this->model->Listar_Rol() as $r): ?>
                                         <tr>
-                                            <td><?php echo $r->descripcion; ?></td>
+                                            <td><?php echo $r->nombre_rol; ?></td>
                                             <td>
                                                 <a href="?c=Rol&a=Crud&id_rol=<?php echo $r->id_rol; ?>">
                                                     <button class="btn btn-success btn-circle">

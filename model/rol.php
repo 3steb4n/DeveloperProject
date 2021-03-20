@@ -27,7 +27,7 @@
 			{
 				$result = array();
 
-				$stm = $this->pdo->prepare("SELECT * FROM rol WHERE estado_rol = 'Activo'");
+				$stm = $this->pdo->prepare("SELECT * FROM rol");
 				$stm->execute();
 
 				return $stm->fetchAll(PDO::FETCH_OBJ);

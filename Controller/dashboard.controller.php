@@ -1,12 +1,18 @@
 <?php
 	
+	require_once 'Model/usuario.php';
+	require_once 'Model/rol.php';
+
 	class DashboardController
-	{
+	{	
+		private $model;
+		private $model2;
 
 		// Función Constructor
 		public function __CONSTRUCT()
 		{
-
+			$this->model = new Usuario();
+			$this->model2 = new Rol();
 		}
 
 		// Función Index

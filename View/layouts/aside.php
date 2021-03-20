@@ -1,4 +1,6 @@
-
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +25,7 @@
 
 <body id="page-top">
 
+    <!-- <?php ?>-->
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -65,7 +68,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Componentes Admin:</h6>
-                        <a class="collapse-item" href="buttons.html">Permisos</a>
+                        <a class="collapse-item" href="?c=Permiso">Permisos</a>
                         <a class="collapse-item" href="?c=Rol">Roles</a>
                         <a class="collapse-item" href="?c=Usuario">Usuarios</a>
                     </div>
@@ -153,3 +156,4 @@
 
         </ul>
         <!-- End of Sidebar -->
+        <!-- <?php ?>-->

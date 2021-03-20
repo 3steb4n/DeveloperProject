@@ -42,7 +42,9 @@ require_once 'Model/login.php';
 	    			{
 	    				$val = $this->model->CargarPersona($alm);
 
-	    				$alm->nombre = $_SESSION['nombre'];
+	    				$_SESSION['id_usuario'] = $val->id_usuario;
+	    				$_SESSION['nombre'] = $val->nombre;
+	    				$_SESSION['apellido'] = $val->apellido;
 	    				
 	    				header('Location: ?c=Dashboard');
 	    			}
