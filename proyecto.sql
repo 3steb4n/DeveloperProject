@@ -1,6 +1,6 @@
-﻿/*
+/*
 SQLyog Ultimate v11.11 (64 bit)
-MySQL - 5.5.5-10.4.14-MariaDB : Database - proyecto1
+MySQL - 5.5.5-10.4.14-MariaDB : Database - proyecto
 *********************************************************************
 */
 
@@ -12,7 +12,7 @@ MySQL - 5.5.5-10.4.14-MariaDB : Database - proyecto1
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`proyecto1` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`proyecto` /*!40100 DEFAULT CHARACTER SET utf8 */;
 
 USE `proyecto`;
 
@@ -54,18 +54,18 @@ insert  into `iconos`(`ID`,`DESCRIPCION`,`IMAGEN`,`ESTATUS`) values (1,'Editar',
 DROP TABLE IF EXISTS `menu`;
 
 CREATE TABLE `menu` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL,
   `DESCRIPCION` varchar(50) NOT NULL,
   `IMAGEN` varchar(50) NOT NULL DEFAULT 'assets/img/menu/not_found.png',
-  `URL` varchar(50) NOT NULL DEFAULT '#',
+  `URL` varchar(50) NOT NULL,
   `ORDENAMIENTO` int(11) NOT NULL DEFAULT 0,
   `ESTATUS` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `menu` */
 
-insert  into `menu`(`ID`,`DESCRIPCION`,`IMAGEN`,`URL`,`ORDENAMIENTO`,`ESTATUS`) values (1,'Nodo Raíz','assets/img/menu/not_found.png','#',0,1),(2,'Rol','assets/img/menu/rol.png','rol.php',1,1),(3,'Usuario','assets/img/menu/usuario.png','usuario.php',2,1);
+insert  into `menu`(`ID`,`DESCRIPCION`,`IMAGEN`,`URL`,`ORDENAMIENTO`,`ESTATUS`) values (0,'Nodo Raíz','assets/img/menu/not_found.png','#',0,1),(1,'Rol','assets/img/menu/rol.png','rol.php',1,1),(2,'Usuario','assets/img/menu/usuario.png','usuario.php',2,1);
 
 /*Table structure for table `perfiles` */
 
