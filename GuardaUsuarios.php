@@ -9,15 +9,22 @@
     $cbPerfil		= $_POST['cbPerfil'];
     $cbEstatus		= $_POST['cbEstatus'];
     $Buscar          = $ObjetosPermisos->BuscaEmail($txtEmail);
-    if($id!=0){
+
+    if($id!=0)
+    {
     	$Buscar = array();
     }
-	if(!empty($Buscar)){
+	if(!empty($Buscar))
+    {
 		echo "El Correo Ya esta en Uso";
-	}else{
+	}
+    else
+    {
 		$estatus        = $ObjetosPermisos->GuardarUsuario($id,$txtNombre,$txtApellidos,$txtEmail,$cbPerfil,$cbEstatus);
-	    if($estatus==true){
+
+	    if($estatus==true)
+        {
 	    	echo "1";
 	    }
-	}
+	} 
  ?>

@@ -71,7 +71,7 @@
                                     <tbody>
                                         <?php foreach ($Usuarios as $key => $value) 
                                             {
-                                                $IdMenuHijo     = encrypt($value["id_usuario"]);
+                                                $IdMenuHijo     = encrypt($value["ID"]);
                                                 echo "<tr>";
                                                 echo "<td>";
                                                     /*creamos los iconos*/
@@ -80,30 +80,30 @@
                                                         foreach ($PermisosIconos as $key => $icon) 
                                                         {
                                                             $IdImagen  = "editar";
-                                                            $IdIcono   = trim($icon["id_icono"]);
+                                                            $IdIcono   = trim($icon["ID"]);
                                                             $IdIcono   = encrypt($IdIcono);
-                                                            if(trim($icon["descripcion"])=="Eliminar")
+                                                            if(trim($icon["DESCRIPCION"])=="Eliminar")
                                                             {
                                                                 $IdImagen = "eliminar";
                                                             }
-                                                            if(trim($icon["descripcion"])=="Modificar")
+                                                            if(trim($icon["DESCRIPCION"])=="Modificar")
                                                             {
                                                                 $IdImagen = "modificar";
                                                             }
                                                 ?>
 
-                                                        <img  name="<?php echo $IdImagen; ?>" onclick="Control('<?php echo encrypt($IdMenu)."|".$IdIcono."|".$IdMenuHijo; ?>')" id="<?php echo $IdImagen; ?>" src="<?php echo $icon['imagen']; ?>" title="<?php $icon['descripcion']; ?>" style="cursor:pointer;" width="30" height="30">
+                                                        <img  name="<?php echo $IdImagen; ?>" onclick="Control('<?php echo encrypt($IdMenu)."|".$IdIcono."|".$IdMenuHijo; ?>')" id="<?php echo $IdImagen; ?>" src="<?php echo $icon['IMAGEN']; ?>" title="<?php $icon['DESCRIPCION']; ?>" style="cursor:pointer;" width="30" height="30">
                                                 <?php
                                                         }
                                                     }
 
                                                 echo "</td>";
-                                                echo "<td>".$value["nombre"]." ".$value["apellido"]."</td>";
-                                                echo "<td>".$value["correo"]."</td>";
-                                                echo "<td>".$value["usuario"]."</td>";
-                                                echo "<td>".$value["contrasena"]."</td>";
+                                                echo "<td>".$value["NOMBRE"]." ".$value["APELLIDOS"]."</td>";
+                                                echo "<td>".$value["CORREO"]."</td>";
+                                                echo "<td>".$value["USUARIO"]."</td>";
+                                                echo "<td>".$value["PASSWORD"]."</td>";
                                                 echo "<td>";
-                                                if($value["estado"]==1){echo "Activo";}else{echo "Inactivo";}
+                                                if($value["ESTATUS"]==1){echo "Activo";}else{echo "Inactivo";}
                                                 echo "</td>";
                                                 echo "</tr>";
                                         }

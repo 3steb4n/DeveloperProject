@@ -5,9 +5,13 @@
     $ObjetosPermisos = new Permisos;
 	$Email	         = $_POST['Email'];
 	$Buscar          = $ObjetosPermisos->BuscaEmail($Email);
-	if(!empty($Buscar)){
+
+	if(!empty($Buscar))
+	{
 		echo "1";
-	}else{
+	}
+	else
+	{
 		echo "0";
 	}
 ?>

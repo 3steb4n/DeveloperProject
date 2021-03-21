@@ -1,6 +1,6 @@
-/*
+﻿/*
 SQLyog Ultimate v11.11 (64 bit)
-MySQL - 5.5.5-10.4.14-MariaDB : Database - proyecto
+MySQL - 5.5.5-10.4.14-MariaDB : Database - proyecto1
 *********************************************************************
 */
 
@@ -12,131 +12,133 @@ MySQL - 5.5.5-10.4.14-MariaDB : Database - proyecto
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`proyecto` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`proyecto1` /*!40100 DEFAULT CHARACTER SET utf8 */;
 
 USE `proyecto`;
 
-/*Table structure for table `asigna_permiso_rol` */
+/*Table structure for table `asigna_permisos_perfiles` */
 
-DROP TABLE IF EXISTS `asigna_permiso_rol`;
+DROP TABLE IF EXISTS `asigna_permisos_perfiles`;
 
-CREATE TABLE `asigna_permiso_rol` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_rol` int(11) NOT NULL,
-  `id_icono` int(11) NOT NULL,
-  `id_menu` int(11) NOT NULL,
-  `estado` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+CREATE TABLE `asigna_permisos_perfiles` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_PERFIL` int(11) NOT NULL,
+  `ID_ICONO` int(11) NOT NULL,
+  `ID_MENU` int(11) NOT NULL,
+  `ESTATUS` int(11) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
-/*Data for the table `asigna_permiso_rol` */
+/*Data for the table `asigna_permisos_perfiles` */
 
-insert  into `asigna_permiso_rol`(`id`,`id_rol`,`id_icono`,`id_menu`,`estado`) values (1,1,1,1,1),(2,1,2,1,1),(3,1,3,1,1),(4,1,1,2,1),(5,1,2,2,1),(6,1,3,2,1);
+insert  into `asigna_permisos_perfiles`(`ID`,`ID_PERFIL`,`ID_ICONO`,`ID_MENU`,`ESTATUS`) values (1,1,1,1,1),(2,1,2,1,1),(3,1,3,1,1),(4,1,1,2,1),(5,1,2,2,1),(6,1,3,2,1);
 
-/*Table structure for table `icono` */
+/*Table structure for table `iconos` */
 
-DROP TABLE IF EXISTS `icono`;
+DROP TABLE IF EXISTS `iconos`;
 
-CREATE TABLE `icono` (
-  `id_icono` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(50) NOT NULL,
-  `imagen` varchar(100) NOT NULL,
-  `estado` int(11) NOT NULL,
-  PRIMARY KEY (`id_icono`)
+CREATE TABLE `iconos` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `DESCRIPCION` varchar(50) NOT NULL,
+  `IMAGEN` varchar(100) NOT NULL,
+  `ESTATUS` int(11) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
-/*Data for the table `icono` */
+/*Data for the table `iconos` */
 
-insert  into `icono`(`id_icono`,`descripcion`,`imagen`,`estado`) values (1,'Editar','assets/img/acciones/editar.png',1),(2,'Eliminar','assets/img/acciones/eliminar.png',1),(3,'Modificar','assets/img/acciones/modificar.png',1);
+insert  into `iconos`(`ID`,`DESCRIPCION`,`IMAGEN`,`ESTATUS`) values (1,'Editar','assets/img/acciones/editar.png',1),(2,'Eliminar','assets/img/acciones/eliminar.png',1),(3,'Modificar','assets/img/acciones/modificar.png',1);
 
 /*Table structure for table `menu` */
 
 DROP TABLE IF EXISTS `menu`;
 
 CREATE TABLE `menu` (
-  `id_menu` int(11) NOT NULL,
-  `descripcion` varchar(50) NOT NULL,
-  `imagen` varchar(50) NOT NULL,
-  `url` varchar(50) NOT NULL,
-  `orden` int(11) NOT NULL,
-  `estado` int(11) NOT NULL,
-  PRIMARY KEY (`id_menu`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `DESCRIPCION` varchar(50) NOT NULL,
+  `IMAGEN` varchar(50) NOT NULL DEFAULT 'assets/img/menu/not_found.png',
+  `URL` varchar(50) NOT NULL DEFAULT '#',
+  `ORDENAMIENTO` int(11) NOT NULL DEFAULT 0,
+  `ESTATUS` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 /*Data for the table `menu` */
 
-insert  into `menu`(`id_menu`,`descripcion`,`imagen`,`url`,`orden`,`estado`) values (0,'Nodo Raiz','assets/img/menu/not_found.png','#',0,1),(1,'Rol','assets/img/menu/rol.png','rol.php',1,1),(2,'Usuario','assets/img/menu/usuario.png','usuario.php',2,1);
+insert  into `menu`(`ID`,`DESCRIPCION`,`IMAGEN`,`URL`,`ORDENAMIENTO`,`ESTATUS`) values (1,'Nodo Raíz','assets/img/menu/not_found.png','#',0,1),(2,'Rol','assets/img/menu/rol.png','rol.php',1,1),(3,'Usuario','assets/img/menu/usuario.png','usuario.php',2,1);
 
-/*Table structure for table `permiso` */
+/*Table structure for table `perfiles` */
 
-DROP TABLE IF EXISTS `permiso`;
+DROP TABLE IF EXISTS `perfiles`;
 
-CREATE TABLE `permiso` (
-  `id_permiso` int(11) NOT NULL AUTO_INCREMENT,
-  `id_usuario` int(11) NOT NULL,
-  `id_menu` int(11) NOT NULL,
-  `estado` int(11) NOT NULL,
-  PRIMARY KEY (`id_permiso`)
+CREATE TABLE `perfiles` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `DESCRIPCION` varchar(30) NOT NULL,
+  `ESTATUS` int(11) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+/*Data for the table `perfiles` */
+
+insert  into `perfiles`(`ID`,`DESCRIPCION`,`ESTATUS`) values (1,'Administrador',1);
+
+/*Table structure for table `permisos` */
+
+DROP TABLE IF EXISTS `permisos`;
+
+CREATE TABLE `permisos` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_USUARIO` int(11) NOT NULL,
+  `ID_MENU` int(11) NOT NULL,
+  `ESTATUS` int(11) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
-/*Data for the table `permiso` */
+/*Data for the table `permisos` */
 
-insert  into `permiso`(`id_permiso`,`id_usuario`,`id_menu`,`estado`) values (1,1,1,1),(2,1,2,1);
+insert  into `permisos`(`ID`,`ID_USUARIO`,`ID_MENU`,`ESTATUS`) values (1,1,1,1),(2,1,2,1);
 
-/*Table structure for table `permiso_icono` */
+/*Table structure for table `permisos_iconos` */
 
-DROP TABLE IF EXISTS `permiso_icono`;
+DROP TABLE IF EXISTS `permisos_iconos`;
 
-CREATE TABLE `permiso_icono` (
-  `id_permiso_icono` int(11) NOT NULL AUTO_INCREMENT,
-  `id_usuario` int(11) NOT NULL,
-  `id_icono` int(11) NOT NULL,
-  `id_menu` int(11) NOT NULL,
-  `estado` int(11) NOT NULL,
-  PRIMARY KEY (`id_permiso_icono`)
+CREATE TABLE `permisos_iconos` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_USUARIO` int(11) NOT NULL,
+  `ID_ICONO` int(11) NOT NULL,
+  `ID_MENU` int(11) NOT NULL,
+  `ESTATUS` int(11) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
-/*Data for the table `permiso_icono` */
+/*Data for the table `permisos_iconos` */
 
-insert  into `permiso_icono`(`id_permiso_icono`,`id_usuario`,`id_icono`,`id_menu`,`estado`) values (1,1,1,0,1),(2,1,2,0,1),(3,1,1,1,1),(4,1,2,1,1),(5,1,3,1,1),(6,1,1,2,1),(7,1,2,2,1);
+insert  into `permisos_iconos`(`ID`,`ID_USUARIO`,`ID_ICONO`,`ID_MENU`,`ESTATUS`) values (1,1,1,0,1),(2,1,2,0,1),(3,1,1,1,1),(4,1,2,1,1),(5,1,3,1,1),(6,1,1,2,1),(7,1,2,2,1);
 
-/*Table structure for table `rol` */
+/*Table structure for table `usuarios` */
 
-DROP TABLE IF EXISTS `rol`;
+DROP TABLE IF EXISTS `usuarios`;
 
-CREATE TABLE `rol` (
-  `id_rol` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(30) NOT NULL,
-  `estado` int(11) NOT NULL,
-  PRIMARY KEY (`id_rol`)
+CREATE TABLE `usuarios` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `NOMBRE` varchar(100) NOT NULL,
+  `APELLIDOS` varchar(50) NOT NULL,
+  `CORREO` varchar(50) NOT NULL,
+  `USUARIO` varchar(20) NOT NULL,
+  `PASSWORD` varchar(50) NOT NULL,
+  `FECHA_REGISTRO` varchar(20) NOT NULL,
+  `FECHA_ACTIVACION` varchar(20) NOT NULL,
+  `FECHA_ACTUALIZACION` varchar(20) NOT NULL,
+  `VERIFICADO` int(11) NOT NULL DEFAULT 1,
+  `ESTATUS` int(11) NOT NULL DEFAULT 0,
+  `ACCESO` int(11) NOT NULL DEFAULT 0,
+  `TIPO_USUARIO` int(11) NOT NULL,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-/*Data for the table `rol` */
+/*Data for the table `usuarios` */
 
-insert  into `rol`(`id_rol`,`descripcion`,`estado`) values (1,'Administrador',1);
-
-/*Table structure for table `usuario` */
-
-DROP TABLE IF EXISTS `usuario`;
-
-CREATE TABLE `usuario` (
-  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) NOT NULL,
-  `apellido` varchar(100) NOT NULL,
-  `correo` varchar(100) NOT NULL,
-  `usuario` varchar(20) NOT NULL,
-  `contrasena` varchar(50) NOT NULL,
-  `fecha_registro` varchar(20) NOT NULL,
-  `fecha_actualizacion` varchar(20) NOT NULL,
-  `estado` int(11) NOT NULL,
-  `acceso` int(11) NOT NULL,
-  `tipo_usuario` int(11) NOT NULL,
-  PRIMARY KEY (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
-/*Data for the table `usuario` */
-
-insert  into `usuario`(`id_usuario`,`nombre`,`apellido`,`correo`,`usuario`,`contrasena`,`fecha_registro`,`fecha_actualizacion`,`estado`,`acceso`,`tipo_usuario`) values (1,'Juan','O','prueba@test.com','admin','admin','','',1,0,1);
+insert  into `usuarios`(`ID`,`NOMBRE`,`APELLIDOS`,`CORREO`,`USUARIO`,`PASSWORD`,`FECHA_REGISTRO`,`FECHA_ACTIVACION`,`FECHA_ACTUALIZACION`,`VERIFICADO`,`ESTATUS`,`ACCESO`,`TIPO_USUARIO`) values (1,'Juan','O','test@gmail.com','admin','admin','','','',1,1,0,1);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

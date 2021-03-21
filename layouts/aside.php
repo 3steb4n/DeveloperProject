@@ -17,13 +17,16 @@
     <meta name="author" content="">
 
     <!-- Custom fonts for this template-->
-    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/bootstrap/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="assets/bootstrap/css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Icono -->
+    <link rel="icon" type="image/png" href="assets/bootstrap/img/login.png"/>
 
     <script type="text/javascript">
 
@@ -82,12 +85,12 @@
                             }
 
                             $cuantos ++;
-                            $idUrl  = encrypt($CrearMenu["id_menu"]);
-                            $Style  = encrypt($CrearMenu["descripcion"]);
+                            $idUrl  = encrypt($CrearMenu["ID"]);
+                            $Style  = encrypt($CrearMenu["DESCRIPCION"]);
 
-                            echo '<a class="nav-link" href="'.$CrearMenu["url"].'?a='.$idUrl.'&b='.$Style.'">';
-                            echo '<img src="'.$CrearMenu["imagen"].'" width="20px" height="20px"> &nbsp';
-                            echo "<span>".$CrearMenu["descripcion"]."</span></a>";
+                            echo '<a class="nav-link" href="'.$CrearMenu["URL"].'?a='.$idUrl.'&b='.$Style.'">';
+                            echo '<img src="'.$CrearMenu["IMAGEN"].'" width="20px" height="20px"> &nbsp';
+                            echo "<span>".$CrearMenu["DESCRIPCION"]."</span></a>";
 
                             if($cuantos==3)
                             {

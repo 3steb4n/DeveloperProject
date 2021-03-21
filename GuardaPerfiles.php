@@ -9,9 +9,13 @@
 	$txtdescripcion	= $_POST['txtdescripcion'];
 	$cbEstatus		= $_POST['cbEstatus'];
 	$Estatus        = "";
-	if($txtBandera==1){
+
+	if($txtBandera==1)
+	{
 		$Estatus = $ObjetosPermisos->ActualizaPerfil($txtIdPerfil,$txtdescripcion,$cbEstatus,1);
-	}else{
+	}
+	else
+	{
 		$Estatus = $ObjetosPermisos->ActualizaPerfil($txtIdPerfil,$txtdescripcion,$cbEstatus,0);
 	}
 	echo "1";

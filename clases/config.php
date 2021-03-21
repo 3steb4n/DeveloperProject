@@ -1,6 +1,6 @@
 <?php
 
-abstract class config {
+abstract class configuracion {
 	
 	protected $datahost;
 	protected function conectar($archivo = 'config.ini'){
