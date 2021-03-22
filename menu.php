@@ -2,19 +2,12 @@
     include('layouts/header.php');
 
     $ObjetosPermisos = new Permisos;
-    $Perfiles        = array();
-    $PermisosIconos  = array();
-    $IdMenu          = "";
-    if(isset($_GET['a'])){
-        $IdMenu          = decrypt($_GET['a']);
-        $Perfiles        = $ObjetosPermisos->Perfiles();
-        $PermisosIconos  = $ObjetosPermisos->iconos_menu($_SESSION['USERID'],$IdMenu);
-    }
-
+    $MenuSistema     = $ObjetosPermisos->listamenu();
+    $PermisosIconos  = $ObjetosPermisos->iconos_menu($_SESSION['USERID'],0);
  ?>
 
 	<!-- Title Page-->
-    <title>Roles</title>
+    <title>Menú del Sistema</title>
 
 
         <!-- Begin Page Content -->
@@ -23,13 +16,8 @@
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 class="h3 mb-0 text-gray-800">
-                    Roles
+                    Menú del Sistema
                 </h1>
-                <form name="formularios" id="formularios">
-                    <input type="hidden" name="control" id="control" value="<?php echo encrypt($IdMenu)."|".encrypt(999999)."|".encrypt(999999); ?>">
-                </form>
-                
-                <input type="button" name="nuevo" value="Rol" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="Control('<?php echo encrypt($IdMenu)."|".encrypt(999999)."|".encrypt(999999); ?>')"/>
             </div>
 
             <!-- Content Row -->
@@ -40,30 +28,34 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Lista de Roles</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Menú del Sistema</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                             	<?php
-				                    if(!empty($Perfiles)){
+				                    if(!empty($MenuSistema)){
 				                ?>
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th>Acción</th>
-                                            <th>Rol</th>
+                                            <th>Menú</th>
+                                            <th>Url</th>
+                                            <th>Orden</th>
                                             <th>Estado</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>Acción</th>
-                                            <th>Rol</th>
+                                            <th>Menú</th>
+                                            <th>Url</th>
+                                            <th>Orden</th>
                                             <th>Estado</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <?php foreach ($Perfiles as $key => $value) 
+                                        <?php foreach ($MenuSistema as $key => $value) 
                                             {
                                                 $IdMenuHijo     = encrypt($value["ID"]);
                                                 echo "<tr>";
@@ -93,6 +85,8 @@
 
                                                 echo "</td>";
                                                 echo "<td>".$value["DESCRIPCION"]."</td>";
+                                                echo "<td>".$value["URL"]."</td>";
+                                                echo "<td>".$value["ORDENAMIENTO"]."</td>";
                                                 echo "<td>";
                                                 if($value["ESTATUS"]==1){echo "Activo";}else{echo "Inactivo";}
                                                 echo "</td>";

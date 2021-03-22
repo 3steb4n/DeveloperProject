@@ -74,7 +74,7 @@
                                                 $IdMenuHijo     = encrypt($value["ID"]);
                                                 echo "<tr>";
                                                 echo "<td>";
-                                                    /*creamos los iconos*/
+
                                                     if(!empty($PermisosIconos))
                                                     {
                                                         foreach ($PermisosIconos as $key => $icon) 
