@@ -32,10 +32,10 @@
                     </span>
 
                     <div class="wrap-input100 validate-input" data-validate = "Usuario es requerido">
-                        <input class="input100" type="text" id="usuario_login" name="usuario_login" placeholder="Usuario" autocomplete="off">
+                        <input class="input100" type="text" id="usuario_login" name="usuario_login" placeholder="Usuario" autocomplete="off" autofocus>
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
-                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <i class="fa fa-user" aria-hidden="true"></i>
                         </span>
                     </div>
 

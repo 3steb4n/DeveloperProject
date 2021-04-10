@@ -1,7 +1,6 @@
 <?php 
     include('layouts/header.php');
 
-    $ObjetosPermisos = new Permisos;
     $MenuSistema     = $ObjetosPermisos->listamenu();
     $PermisosIconos  = $ObjetosPermisos->iconos_menu($_SESSION['USERID'],0);
  ?>

@@ -2,6 +2,7 @@
     session_start();
     include('class.consultas.php');
     include('clases/class.encriptar.php');
+
     $ObjetosPermisos = new Permisos;
     $menuPrincipal   = $ObjetosPermisos->Menu($_SESSION['USERID']);
  ?>
@@ -88,9 +89,9 @@
                             $idUrl  = encrypt($CrearMenu["ID"]);
                             $Style  = encrypt($CrearMenu["DESCRIPCION"]);
 
-                            echo '<a class="nav-link" href="'.$CrearMenu["URL"].'?a='.$idUrl.'&b='.$Style.'">';
-                            echo '<img src="'.$CrearMenu["IMAGEN"].'" width="20px" height="20px"> &nbsp';
-                            echo "<span>".$CrearMenu["DESCRIPCION"]."</span></a>";
+                            echo '<center><a class="nav-link" href="'.$CrearMenu["URL"].'?a='.$idUrl.'&b='.$Style.'">';
+                            echo '<img src="'.$CrearMenu["IMAGEN"].'" width="20px" height="20px">&nbsp';
+                            echo '<span>'.$CrearMenu["DESCRIPCION"].'</span></a></center>';
 
                             if($cuantos==3)
                             {

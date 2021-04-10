@@ -1,8 +1,6 @@
 <?php 
     include('layouts/header.php');
 
-    $ObjetosPermisos = new Permisos;
-
     $Usuarios        = array();
     $PermisosIconos  = array();
     $IdMenu          = "";

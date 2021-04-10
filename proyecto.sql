@@ -27,11 +27,11 @@ CREATE TABLE `asigna_permisos_perfiles` (
   `ID_MENU` int(11) NOT NULL,
   `ESTATUS` int(11) NOT NULL DEFAULT 1,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 /*Data for the table `asigna_permisos_perfiles` */
 
-insert  into `asigna_permisos_perfiles`(`ID`,`ID_PERFIL`,`ID_ICONO`,`ID_MENU`,`ESTATUS`) values (1,1,1,1,1),(2,1,2,1,1),(3,1,3,1,1),(4,1,1,2,1),(5,1,2,2,1),(6,1,3,2,1),(7,1,1,3,1),(8,1,2,3,1);
+insert  into `asigna_permisos_perfiles`(`ID`,`ID_PERFIL`,`ID_ICONO`,`ID_MENU`,`ESTATUS`) values (1,1,1,1,1),(2,1,2,1,1),(3,1,3,1,1),(4,1,1,2,1),(5,1,2,2,1),(6,1,3,2,1),(7,1,1,3,1),(8,1,2,3,1),(9,1,0,4,1);
 
 /*Table structure for table `iconos` */
 
@@ -65,7 +65,7 @@ CREATE TABLE `menu` (
 
 /*Data for the table `menu` */
 
-insert  into `menu`(`ID`,`DESCRIPCION`,`IMAGEN`,`URL`,`ORDENAMIENTO`,`ESTATUS`) values (0,'Nodo Raíz','assets/img/menu/not_found.png','#',0,1),(1,'Rol','assets/img/menu/rol.png','rol.php',1,1),(2,'Usuario','assets/img/menu/usuario.png','usuario.php',2,1),(3,'Menú','assets/img/menu/menu.png','menu.php',3,1),(4,'Datos','assets/img/menu/configuracion.png','datos.php',4,1);
+insert  into `menu`(`ID`,`DESCRIPCION`,`IMAGEN`,`URL`,`ORDENAMIENTO`,`ESTATUS`) values (0,'Nodo Raíz','assets/img/menu/not_found.png','#',0,1),(1,'Rol','assets/img/menu/rol.png','rol.php',1,1),(2,'Usuario','assets/img/menu/usuario.png','usuario.php',2,1),(3,'Menú','assets/img/menu/menu.png','menu.php',3,1),(4,'Reportes','assets/img/menu/reporte.png','reporte.php',4,1),(5,'Datos','assets/img/menu/configuracion.png','datos.php',5,1);
 
 /*Table structure for table `perfiles` */
 
@@ -92,11 +92,11 @@ CREATE TABLE `permisos` (
   `ID_MENU` int(11) NOT NULL,
   `ESTATUS` int(11) NOT NULL DEFAULT 1,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 /*Data for the table `permisos` */
 
-insert  into `permisos`(`ID`,`ID_USUARIO`,`ID_MENU`,`ESTATUS`) values (1,1,1,1),(2,1,2,1),(3,1,3,1),(4,1,4,1);
+insert  into `permisos`(`ID`,`ID_USUARIO`,`ID_MENU`,`ESTATUS`) values (1,1,1,1),(2,1,2,1),(3,1,3,1),(4,1,4,1),(5,1,5,1);
 
 /*Table structure for table `permisos_iconos` */
 
