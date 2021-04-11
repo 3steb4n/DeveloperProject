@@ -1,0 +1,63 @@
+<?php 
+    include('layouts/header.php'); 
+ ?>
+
+	<!-- Title Page-->
+    <title>Horarios</title>
+
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">
+                    Horarios
+                </h1>
+            </div>
+
+            <!-- Content Row -->
+            <div class="row">
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <form action="" method="post" enctype="multipart/form-data" class="formulario">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Horarios</h6>
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <center>
+                                    <table>
+                                        <tbody>
+                                            
+                                        </tbody>
+                                    </table>
+                                    </center>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+
+            <!-- Content Row -->
+            <div class="row"></div>
+
+            <!-- Content Row -->
+            <div class="row"></div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <?php 
+        include('layouts/footer.php');
+    ?>
