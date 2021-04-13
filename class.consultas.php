@@ -220,6 +220,15 @@ class Permisos
 		}
 	}
 
+	/*Oferta Academica*/
+	public function Oferta()
+	{
+		$consulta = "SELECT * FROM oferta order by ID ASC";
+		$conexion = new conectorDB;
+		$this->permisos = $conexion->EjecutarSentencia($consulta);
+		return $this->permisos;
+	}
+
 	/*Perfiles*/
 	public function Perfiles()
 	{

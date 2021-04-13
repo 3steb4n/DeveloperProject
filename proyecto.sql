@@ -33,6 +33,22 @@ CREATE TABLE `asigna_permisos_perfiles` (
 
 insert  into `asigna_permisos_perfiles`(`ID`,`ID_PERFIL`,`ID_ICONO`,`ID_MENU`,`ESTATUS`) values (1,1,1,1,1),(2,1,2,1,1),(3,1,3,1,1),(4,1,1,2,1),(5,1,2,2,1),(6,1,3,2,1),(7,1,1,3,1),(8,1,2,3,1),(9,1,0,4,1);
 
+/*Table structure for table `grupo` */
+
+DROP TABLE IF EXISTS `grupo`;
+
+CREATE TABLE `grupo` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `SEMESTRE` int(11) NOT NULL,
+  `CURSO` varchar(100) NOT NULL,
+  `TIPO` int(11) NOT NULL,
+  `CANTIDAD` int(11) NOT NULL,
+  `ESTATUS` decimal(11,0) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `grupo` */
+
 /*Table structure for table `iconos` */
 
 DROP TABLE IF EXISTS `iconos`;
@@ -65,7 +81,23 @@ CREATE TABLE `menu` (
 
 /*Data for the table `menu` */
 
-insert  into `menu`(`ID`,`DESCRIPCION`,`IMAGEN`,`URL`,`ORDENAMIENTO`,`ESTATUS`) values (0,'Nodo Raíz','assets/img/menu/not_found.png','#',0,1),(1,'Rol','assets/img/menu/rol.png','rol.php',1,1),(2,'Usuario','assets/img/menu/usuario.png','usuario.php',2,1),(3,'Menú','assets/img/menu/menu.png','menu.php',3,1),(4,'Horario','assets/img/menu/horario.png','horario.php',4,1),(5,'Reportes','assets/img/menu/reporte.png','reporte.php',5,1),(6,'Datos','assets/img/menu/configuracion.png','datos.php',6,1);
+insert  into `menu`(`ID`,`DESCRIPCION`,`IMAGEN`,`URL`,`ORDENAMIENTO`,`ESTATUS`) values (0,'Nodo Raíz','assets/img/menu/not_found.png','#',0,1),(1,'Rol','assets/img/menu/rol.png','rol.php',1,1),(2,'Usuario','assets/img/menu/usuario.png','usuario.php',2,1),(3,'Menú','assets/img/menu/menu.png','menu.php',3,1),(4,'Horario','assets/img/menu/horario.png','horario.php',4,1),(5,'Oferta Academica','assets/img/menu/oferta.png','oferta.php',5,1),(6,'Reportes','assets/img/menu/reporte.png','reporte.php',6,1),(7,'Datos','assets/img/menu/configuracion.png','datos.php',7,1);
+
+/*Table structure for table `oferta` */
+
+DROP TABLE IF EXISTS `oferta`;
+
+CREATE TABLE `oferta` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `DESCRIPCION` varchar(100) NOT NULL,
+  `CURRICULO` varchar(100) NOT NULL,
+  `ESTATUS` int(11) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+
+/*Data for the table `oferta` */
+
+insert  into `oferta`(`ID`,`DESCRIPCION`,`CURRICULO`,`ESTATUS`) values (1,'CIENCIA DE LA INFORMACION Y BIBLIOTECOLOGIA','EGRESADOS PLAN 10 - NOCTURNO',1),(2,'CIENCIA DE LA INFORMACION Y BIBLIOTECOLOGIA','EGRESADOS PLAN 11 - NOCTURNO',1),(3,'CIENCIA DE LA INFORMACION Y BIBLIOTECOLOGIA','SENA GESTION BIBLIOTECARIA',1),(4,'CIENCIA DE LA INFORMACION Y BIBLIOTECOLOGIA','SENA GESTION DOCUMENTAL',1),(5,'INGENIERIA DE SOFTWARE','EGRESADOS - NOCTURNO',1),(6,'INGENIERIA DE SOFTWARE','PLAN ESTUDIOS 2020',1),(7,'INGENIERIA DE SOFTWARE','SENA - NOCTURNO',1),(8,'TECNOLOGIA EN ADMINISTRACION DE SISTEMAS DE INFORMACION Y DOCUMENTACION','PLAN NOCTURNO',1),(9,'TECNOLOGIA EN COMPUTACION Y DESARROLLO DE SOFTWARE','PLAN DIURNO',1),(10,'TECNOLOGIA EN COMPUTACION Y DESARROLLO DE SOFTWARE','PLAN NOCTURNO',1);
 
 /*Table structure for table `perfiles` */
 
@@ -92,11 +124,11 @@ CREATE TABLE `permisos` (
   `ID_MENU` int(11) NOT NULL,
   `ESTATUS` int(11) NOT NULL DEFAULT 1,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 /*Data for the table `permisos` */
 
-insert  into `permisos`(`ID`,`ID_USUARIO`,`ID_MENU`,`ESTATUS`) values (1,1,1,1),(2,1,2,1),(3,1,3,1),(4,1,4,1),(5,1,5,1),(6,1,6,1);
+insert  into `permisos`(`ID`,`ID_USUARIO`,`ID_MENU`,`ESTATUS`) values (1,1,1,1),(2,1,2,1),(3,1,3,1),(4,1,4,1),(5,1,5,1),(6,1,6,1),(7,1,7,1);
 
 /*Table structure for table `permisos_iconos` */
 
