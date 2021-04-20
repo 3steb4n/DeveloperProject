@@ -1,5 +1,12 @@
 <?php 
     include('layouts/header.php'); 
+
+    $Oferta        = array();
+    $IdMenu          = "";
+    if(isset($_GET['a'])){
+        $IdMenu          = decrypt($_GET['a']);
+        $Oferta        = $ObjetosPermisos->Oferta();
+    }
  ?>
 
 	<!-- Title Page-->
@@ -25,17 +32,53 @@
                     <div class="card shadow mb-4">
                         <form action="" method="post" enctype="multipart/form-data" class="formulario">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Horarios</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Lista de Horarios</h6>
                             </div>
                             <div class="card-body">
-                                <div>
-                                    <center>
-                                    <table>
+                                <div class="table-responsive">
+                                    <?php
+                                        if(!empty($Oferta)){
+                                    ?>
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>Programa</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th></th>
+                                                <th>Programa</th>
+                                            </tr>
+                                        </tfoot>
                                         <tbody>
-                                            
+                                            <?php foreach ($Oferta as $key => $value) 
+                                                {
+                                                    echo "<tr>";
+                                                    echo "<td>";            
+                                                    ?>
+
+                                                            <a href="" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                                                <i class></i> INGRESAR
+                                                            </a>
+                                                    <?php
+                                                    echo "</td>";
+                                                    echo "<td>".$value["DESCRIPCION"]."</td>";
+                                                    echo "</tr>";
+                                                }
+                                            ?>
                                         </tbody>
                                     </table>
-                                    </center>
+                                    <?php 
+                                        }
+                                        else
+                                        {
+                                            echo "<br/><center>";
+                                            include("NoAcceso.php");
+                                            echo "</center>";
+                                        }
+                                    ?>
                                 </div>
                             </div>
                         </form>
