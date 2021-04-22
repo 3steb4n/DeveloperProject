@@ -1,12 +1,15 @@
 <?php 
     include('layouts/header.php'); 
 
-    $Oferta        = array();
+    $Oferta_Grupos       = array();
     $IdMenu          = "";
     if(isset($_GET['a'])){
         $IdMenu          = decrypt($_GET['a']);
-        $Oferta        = $ObjetosPermisos->Oferta();
+        var_dump($ObjetosPermisos);
+        $Oferta_Grupos       = $ObjetosPermisos->Oferta_Grupos();
+        var_dump($Oferta_Grupos );
     }
+            
  ?>
 
 	<!-- Title Page-->
@@ -19,7 +22,7 @@
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 class="h3 mb-0 text-gray-800">
-                    Grupos
+                    Cursos
                 </h1>
             </div>
 
@@ -32,44 +35,45 @@
                     <div class="card shadow mb-4">
                         <form action="" method="post" enctype="multipart/form-data" class="formulario">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Lista de Grupos</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Lista de Cursos</h6>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <?php
-                                        if(!empty($Oferta)){
+                                        if(!empty($Oferta_Grupos)){
                                     ?>
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th></th>
-                                                <th>Programa</th>
-                                                <th>Currículo</th>
+                                                <th>Sem</th>
+                                                <th>Curso</th>
+                                                <th>Tipo de Curso</th>
                                                 <th>Estado</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                                <th></th>
-                                                <th>Programa</th>
-                                                <th>Currículo</th>
+                                                <th>Sem</th>
+                                                <th>Curso</th>
+                                                <th>Tipo de Curso</th>
                                                 <th>Estado</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
-                                            <?php foreach ($Oferta as $key => $value) 
+                                            <?php foreach ($Oferta_Grupos as $key => $value) 
                                                 {
                                                     echo "<tr>";
                                                     echo "<td>";            
                                                     ?>
 
-                                                            <a href="Ofertas_Grupos.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                                            <a href="" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                                                                 <i class></i> INGRESAR
                                                             </a>
                                                     <?php
                                                     echo "</td>";
-                                                    echo "<td>".$value["DESCRIPCION"]."</td>";
-                                                    echo "<td>".$value["CURRICULO"]."</td>";
+                                                    echo "<td>".$value["grupo.SEMESTRE"]."</td>";
+                                                    echo "<td>".$value["grupo.CURSO"]."</td>";
+                                                    echo "<td>".$value["oferta.CURRICULO"]."</td>";
                                                     echo "<td>";
                                                     if($value["ESTATUS"]==1){echo "Activo";}else{echo "Inactivo";}
                                                     echo "</td>";

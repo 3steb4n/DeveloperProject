@@ -229,6 +229,17 @@ class Permisos
 		return $this->permisos;
 	}
 
+	/*Oferta Academica*/
+	public function Oferta_Grupos()
+	{
+		$consulta = "SELECT  grupo.SEMESTRE, grupo.CURSO, oferta.CURRICULO, grupo_oferta.ESTATUS FROM `grupo_oferta` INNER JOIN oferta ON grupo_oferta.ID_OFERTA = oferta.ID INNER JOIN grupo ON grupo_oferta.ID_GRUPO = grupo.ID";
+		print_r($consulta);
+
+		$conexion = new conectorDB;
+		$this->permisos = $conexion->EjecutarSentencia($consulta);
+		return $this->permisos;
+	}
+
 	/*Perfiles*/
 	public function Perfiles()
 	{
