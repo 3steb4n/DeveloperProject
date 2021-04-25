@@ -229,16 +229,33 @@ class Permisos
 		return $this->permisos;
 	}
 
-	/*Oferta Academica*/
+	/*Oferta grupos Academica*/
 	public function Oferta_Grupos()
 	{
-		$consulta = "SELECT  grupo.SEMESTRE, grupo.CURSO, oferta.CURRICULO, grupo_oferta.ESTATUS FROM `grupo_oferta` INNER JOIN oferta ON grupo_oferta.ID_OFERTA = oferta.ID INNER JOIN grupo ON grupo_oferta.ID_GRUPO = grupo.ID";
-		print_r($consulta);
-
+		$consulta = "SELECT  grupo.SEMESTRE, grupo.CURSO, oferta.CURRICULO, grupo_oferta.ESTATUS,grupo_oferta.ID FROM `grupo_oferta` INNER JOIN oferta ON grupo_oferta.ID_OFERTA = oferta.ID INNER JOIN grupo ON grupo_oferta.ID_GRUPO = grupo.ID";
 		$conexion = new conectorDB;
 		$this->permisos = $conexion->EjecutarSentencia($consulta);
 		return $this->permisos;
 	}
+
+	/*Oferta grupos Academica*/
+	public function Actualizar_Oferta_Grupos($id, $valor)
+	{
+		$consulta = "UPDATE `grupo_oferta` SET `ID_TIPOCURSO` = '". $valor ."' WHERE `grupo_oferta`.`ID` = ". $id. "";
+		$conexion = new conectorDB;
+		$this->permisos = $conexion->EjecutarSentencia($consulta);
+		return $this->permisos;
+	}
+
+	/* Tipos Cursos */
+	public function Tipo_Curso()
+	{
+		$consulta = "SELECT ID,DESCRIPCION FROM `tipo_curso`";
+		$conexion = new conectorDB;
+		$this->permisos = $conexion->EjecutarSentencia($consulta);
+		return $this->permisos;
+	}
+
 
 	/*Perfiles*/
 	public function Perfiles()

@@ -3,11 +3,11 @@
 
     $Oferta_Grupos       = array();
     $IdMenu          = "";
+    $_GET['a'] = "hQ==";
     if(isset($_GET['a'])){
         $IdMenu          = decrypt($_GET['a']);
-        var_dump($ObjetosPermisos);
         $Oferta_Grupos       = $ObjetosPermisos->Oferta_Grupos();
-        var_dump($Oferta_Grupos );
+        $Tipocurso = $ObjetosPermisos->Tipo_Curso();
     }
             
  ?>
@@ -47,38 +47,44 @@
                                             <tr>
                                                 <th>Sem</th>
                                                 <th>Curso</th>
+                                                <th>Plan de Curso</th>
                                                 <th>Tipo de Curso</th>
-                                                <th>Estado</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
                                                 <th>Sem</th>
                                                 <th>Curso</th>
+                                                <th>Plan de Curso</th>
                                                 <th>Tipo de Curso</th>
-                                                <th>Estado</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
                                             <?php foreach ($Oferta_Grupos as $key => $value) 
                                                 {
                                                     echo "<tr>";
-                                                    echo "<td>";            
-                                                    ?>
+                                                    echo "<td>".$value["SEMESTRE"]."</td>";
+                                                    echo "<td>".$value["CURSO"]."</td>";
+                                                    echo "<td>".$value["CURRICULO"]."</td>";
+                                                
+                                                echo "<td>";
+                                                    echo "<select>";
+                                                        echo "<option value='0'>Seleccione</option>";
+                                                        foreach ($Tipocurso as $key => $valor) {
+                                                            echo '<option value="'.$valor["ID"].'">'.$valor["DESCRIPCION"].'</option>';
+                                                        }
+                                                    echo "</select>";
+                                            ?>
+                                            <a href="ActualizarOfertasCursos.php?id=<?php echo $value["ID"];?>&valor=<?php echo $valor["ID"];?>" 
 
-                                                            <a href="" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                                                                <i class></i> INGRESAR
+                                                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                                                <i class></i> CAMBIAR
                                                             </a>
-                                                    <?php
-                                                    echo "</td>";
-                                                    echo "<td>".$value["grupo.SEMESTRE"]."</td>";
-                                                    echo "<td>".$value["grupo.CURSO"]."</td>";
-                                                    echo "<td>".$value["oferta.CURRICULO"]."</td>";
-                                                    echo "<td>";
-                                                    if($value["ESTATUS"]==1){echo "Activo";}else{echo "Inactivo";}
-                                                    echo "</td>";
-                                                    echo "</tr>";
+                                            <?php          
+                                                echo "</td>";
+                                                echo "</tr>";
                                                 }
+
                                             ?>
                                         </tbody>
                                     </table>
