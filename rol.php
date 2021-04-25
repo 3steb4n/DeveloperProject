@@ -24,7 +24,7 @@
                <h1 class="h3 mb-0 text-gray-800">
                     Roles
                 </h1>
-                <a href="nuevo-rol.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                <a href="rolNuevo.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                     <i class="fas fa-plus"></i> Rol
                 </a>
             </div>

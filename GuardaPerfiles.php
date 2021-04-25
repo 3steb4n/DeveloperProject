@@ -13,13 +13,12 @@
 	if($txtBandera==1)
 	{
 		$Estatus = $ObjetosPermisos->ActualizaPerfil($txtIdPerfil,$txtdescripcion,$cbEstatus,1);
-		header('Location: rol.php');
 	}
 	else
 	{
 		$Estatus = $ObjetosPermisos->ActualizaPerfil($txtIdPerfil,$txtdescripcion,$cbEstatus,0);
-		header('Location: rol.php');
 	}
-	echo "1";
+
+	header('Location: rolNuevo.php');
 
 ?>
