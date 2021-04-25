@@ -30,14 +30,10 @@
     <link rel="icon" type="image/png" href="assets/bootstrap/img/login.png"/>
 
     <script type="text/javascript">
-
-        function Control(valor)
-        {
-            document.formularios.control.value=valor;
+        function Regresar(){
+            window.history.back();
         }
-        
     </script>
-
 </head>
 
 <body id="page-top">

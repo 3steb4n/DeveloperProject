@@ -49,7 +49,7 @@
                                     foreach ($BuscarUsuario as $key => $value) 
                                     {
                         ?>
-                        <form action="" method="post" enctype="multipart/form-data" class="formulario">
+                        <form action="" method="post">
                             <div class="card-header py-3">
                                 <h6 class="m-0 font-weight-bold text-primary"><?php echo $value['NOMBRE']." ".$value['APELLIDOS']; ?></h6>
                             </div>

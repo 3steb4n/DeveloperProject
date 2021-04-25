@@ -6,7 +6,7 @@
     $_GET['a'] = "hQ==";
     if(isset($_GET['a'])){
         $IdMenu          = decrypt($_GET['a']);
-        $Oferta_Grupos       = $ObjetosPermisos->Oferta_Grupos();
+        $Oferta_Grupos   = $ObjetosPermisos->Oferta_Grupos();
         $Tipocurso = $ObjetosPermisos->Tipo_Curso();
     }
             
@@ -21,6 +21,7 @@
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <img src="assets/img/regresar.png" onclick="Regresar()" style="cursor:pointer; " width="25px">
                 <h1 class="h3 mb-0 text-gray-800">
                     Cursos
                 </h1>
@@ -49,6 +50,7 @@
                                                 <th>Curso</th>
                                                 <th>Plan de Curso</th>
                                                 <th>Tipo de Curso</th>
+                                                <th>Acción</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -57,6 +59,7 @@
                                                 <th>Curso</th>
                                                 <th>Plan de Curso</th>
                                                 <th>Tipo de Curso</th>
+                                                <th>Acción</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
@@ -75,12 +78,17 @@
                                                         }
                                                     echo "</select>";
                                             ?>
-                                            <a href="ActualizarOfertasCursos.php?id=<?php echo $value["ID"];?>&valor=<?php echo $valor["ID"];?>" 
-
-                                                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                            <a href="ActualizarOfertasCursos.php?id=<?php echo $value["ID"];?>&valor=<?php echo $valor["ID"];?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                                                                 <i class></i> CAMBIAR
                                                             </a>
                                             <?php          
+                                                echo "</td>";
+                                                echo "<td>";
+                                            ?>
+                                            <a href="" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                                <i class></i> Crear Grupo
+                                            </a>
+                                            <?php
                                                 echo "</td>";
                                                 echo "</tr>";
                                                 }

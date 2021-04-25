@@ -114,6 +114,7 @@ class Permisos
 	}
 	/*Fin Permisos Iconos*/
 
+	/*Validar Login*/	
 	public function ValidacionLogin($usuario,$password)
 	{
 		$consulta = "SELECT * FROM usuarios WHERE USUARIO='".$usuario."' and PASSWORD='".$password."' limit 1";
@@ -121,7 +122,9 @@ class Permisos
 		$this->permisos = $conexion->EjecutarSentencia($consulta);
 		return $this->permisos;
 	}
+	/*Fin Validar Login*/
 
+	/* Menú */
 	public function Menu($id)
 	{
 		$consulta = "SELECT M.ID, M.ORDENAMIENTO,M.DESCRIPCION, M.IMAGEN, M.URL FROM menu as M INNER JOIN permisos AS P";
@@ -230,6 +233,15 @@ class Permisos
 	}
 
 	/*Oferta grupos Academica*/
+	/*public function Oferta_Grupos($id)
+	{
+		$consulta = "SELECT G.SEMESTRE, G.CURSO FROM grupo_oferta AS GO INNER JOIN grupo AS G ON GO.ID_GRUPO = G.ID INNER JOIN oferta AS O";
+		$consulta = $consulta." ON GO.ID_OFERTA = O.ID WHERE GO.ID_OFERTA=".$id." AND O.ESTATUS = 1";
+		$conexion = new conectorDB;
+		$this->permisos = $conexion->EjecutarSentencia($consulta);
+		return $this->permisos;
+	}*/
+
 	public function Oferta_Grupos()
 	{
 		$consulta = "SELECT  grupo.SEMESTRE, grupo.CURSO, oferta.CURRICULO, grupo_oferta.ESTATUS,grupo_oferta.ID FROM `grupo_oferta` INNER JOIN oferta ON grupo_oferta.ID_OFERTA = oferta.ID INNER JOIN grupo ON grupo_oferta.ID_GRUPO = grupo.ID";
