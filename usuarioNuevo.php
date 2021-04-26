@@ -1,12 +1,13 @@
 <?php 
     include('layouts/header.php');
 
-    $Perfiles        = array();
+    $Usuarios        = array();
+    $Usuarios        = $ObjetosPermisos->Usuarios();
     $Perfiles        = $ObjetosPermisos->Perfiles();
  ?>
 
     <!-- Title Page-->
-    <title>Roles</title>
+    <title>Usuarios</title>
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
@@ -15,7 +16,7 @@
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
                 <img src="assets/img/regresar.png" onclick="Regresar()" style="cursor:pointer; " width="25px">
                 <h1 class="h3 mb-0 text-gray-800">
-                    Roles
+                    Usuarios
                 </h1>
             </div>
 
@@ -26,9 +27,9 @@
                     
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <form action="GuardaPerfiles.php" method="post">
+                        <form action="GuardaUsuarios.php" method="post">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Nuevo Rol</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Nuevo Usuario</h6>
                             </div>
                             <div class="card-body">
                                 <div>
@@ -39,14 +40,49 @@
                                                 <td colspan=2>
                                                     <input type="hidden" id="txtBandera" value="<?php echo $bandera; ?>" name="txtBandera">
                                                     <input type="hidden" id="txtidMenu" value="<?php echo $idMenu; ?>" name="txtidMenu">
-                                                    <input type="hidden" id="txtIdPerfil" value="<?php echo $IdmenuHijo; ?>" name="txtIdPerfil">
+                                                    <input type="hidden" id="id" value="0" name="id">
+                                                    <input type="hidden" id="control1" value="0" name="control1">
                                                 </td>
                                             </tr>
 
                                             <tr>
-                                                <td>Descripción:</td>
+                                                <td>Nombre(s):</td>
                                                 <td>
-                                                    <input type="text" id="txtdescripcion" value="" name="txtdescripcion" style="width:350px;height: 30px;" autocomplete="off" required>
+                                                    <input type="text" id="txtNombre" value="" name="txtNombre" style="width:350px;height: 30px;" autocomplete="off" required>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Apellido(s):</td>
+                                                <td>
+                                                    <input type="text" id="txtApellidos" value="" name="txtApellidos" style="width:350px;height: 30px;" autocomplete="off" required>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Correo:</td>
+                                                <td>
+                                                    <input type="email" id="txtEmail" value="" name="txtEmail" style="width:350px;height: 30px;" autocomplete="off" required>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Rol:</td>
+                                                <td>
+                                                    <select name="cbPerfil" id="cbPerfil" style="width:350px;height: 30px;" required>
+                                                        <option value="0">---Seleccione Rol---</option>
+                                                        <?php
+                                                            if(!empty($Perfiles)){
+                                                                foreach ($Perfiles as $key => $value) 
+                                                                {
+                                                                    if($value['ESTATUS']==1)
+                                                                    {
+                                                                        echo "<option value='".$value['ID']."'>".$value['DESCRIPCION']."</option>";
+                                                                    }
+                                                                }
+                                                            }
+                                                        ?>
+                                                    </select>
                                                 </td>
                                             </tr>
 

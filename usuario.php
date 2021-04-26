@@ -23,11 +23,9 @@
                 <h1 class="h3 mb-0 text-gray-800">
                     Usuarios
                 </h1>
-                <form name="formularios" id="formularios">
-                    <input type="hidden" name="control" id="control" value="<?php echo encrypt($IdMenu)."|".encrypt(999999)."|".encrypt(999999); ?>">
-                </form>
-
-                <input type="button" name="nuevo" value="Usuario" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="Control('<?php echo encrypt($IdMenu)."|".encrypt(999999)."|".encrypt(999999); ?>')"/>
+                <a href="usuarioNuevo.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                    <i class="fas fa-plus"></i> Usuario
+                </a>
             </div>
 
             <!-- Content Row -->
