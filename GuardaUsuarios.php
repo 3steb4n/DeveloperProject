@@ -24,7 +24,7 @@
 
 	    if($estatus==true)
         {
-	    	echo "1";
+	    	header('Location: usuarioNuevo.php');
 	    }
 	} 
  ?>
