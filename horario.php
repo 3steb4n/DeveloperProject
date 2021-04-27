@@ -53,7 +53,7 @@
                                                     echo "<td>";            
                                                     ?>
                                                         <a href="horarios_grupos.php?idOferta=<?php echo $value["ID"] ?>&nombreOferta=<?php echo $value["DESCRIPCION"] ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                                                            <i name="idOferta" id="idOferta" value=<?php echo $value["ID"];?> ></i> INGRESAR                                                             
+                                                            <i></i> INGRESAR                                                             
                                                         </a>
                                                     <?php
                                                     echo "</td>";
