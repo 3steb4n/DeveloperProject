@@ -46,22 +46,15 @@
                                                 <th>Programa</th>
                                             </tr>
                                         </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th></th>
-                                                <th>Programa</th>
-                                            </tr>
-                                        </tfoot>
                                         <tbody>
                                             <?php foreach ($Oferta as $key => $value) 
                                                 {
                                                     echo "<tr>";
                                                     echo "<td>";            
                                                     ?>
-
-                                                            <a href="" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                                                                <i class></i> INGRESAR
-                                                            </a>
+                                                        <a href="horarios_grupos.php?idOferta=<?php echo $value["ID"] ?>&nombreOferta=<?php echo $value["DESCRIPCION"] ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                                            <i name="idOferta" id="idOferta" value=<?php echo $value["ID"];?> ></i> INGRESAR                                                             
+                                                        </a>
                                                     <?php
                                                     echo "</td>";
                                                     echo "<td>".$value["DESCRIPCION"]."</td>";
