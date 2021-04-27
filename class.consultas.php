@@ -250,9 +250,21 @@ class Permisos
 		return $this->permisos;
 	}
 
-		public function Horario_Grupo($idGrupo)
+	public function Horario_Grupo($idGrupo, $tipoConsulta)
 	{
-		$consulta = "SELECT grupo.CURSO, grupo.SEMESTRE, oferta.CURRICULO, grupo_oferta.ID_GRUPO, grupo_oferta.CAPACIDAD, tipo_curso.DESCRIPCION, grupo.DOCENTE FROM grupo, grupo_oferta, oferta, tipo_curso WHERE grupo.ID = grupo_oferta.ID_GRUPO and oferta.ID = grupo_oferta.ID_OFERTA and tipo_curso.ID = grupo.ID_TIPO and grupo_oferta.ID_OFERTA = '$idGrupo' ";
+		if($tipoConsulta == 'a'){
+			$consulta = "SELECT grupo.CURSO, grupo.SEMESTRE, oferta.CURRICULO, grupo_oferta.ID_GRUPO, grupo_oferta.CAPACIDAD, tipo_curso.DESCRIPCION, grupo.DOCENTE, grupo.SEMESTRE FROM grupo, grupo_oferta, oferta, tipo_curso WHERE grupo.ID = grupo_oferta.ID_GRUPO and oferta.ID = grupo_oferta.ID_OFERTA and tipo_curso.ID = grupo.ID_TIPO and grupo_oferta.ID_OFERTA = '$idGrupo'";	
+		}else if($tipoConsulta == 'b'){
+			$consulta = "SELECT DISTINCT (grupo.SEMESTRE) FROM grupo, grupo_oferta, oferta WHERE grupo_oferta.ID_GRUPO = grupo.ID and  grupo_oferta.ID_OFERTA = '$idGrupo'";	
+		}
+
+		$conexion = new conectorDB;
+		$this->permisos = $conexion->EjecutarSentencia($consulta);
+		return $this->permisos;
+	}
+
+	public function ConsultarDocentes(){
+		$consulta = "SELECT * FROM docentes";
 		$conexion = new conectorDB;
 		$this->permisos = $conexion->EjecutarSentencia($consulta);
 		return $this->permisos;
