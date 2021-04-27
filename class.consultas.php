@@ -250,6 +250,14 @@ class Permisos
 		return $this->permisos;
 	}
 
+		public function Horario_Grupo($idGrupo)
+	{
+		$consulta = "SELECT grupo.CURSO, grupo.SEMESTRE, oferta.CURRICULO, grupo_oferta.ID_GRUPO, grupo_oferta.CAPACIDAD, tipo_curso.DESCRIPCION, grupo.DOCENTE FROM grupo, grupo_oferta, oferta, tipo_curso WHERE grupo.ID = grupo_oferta.ID_GRUPO and oferta.ID = grupo_oferta.ID_OFERTA and tipo_curso.ID = grupo.ID_TIPO and grupo_oferta.ID_OFERTA = '$idGrupo' ";
+		$conexion = new conectorDB;
+		$this->permisos = $conexion->EjecutarSentencia($consulta);
+		return $this->permisos;
+	}
+
 	/*Oferta grupos Academica*/
 	public function Actualizar_Oferta_Grupos($id, $valor)
 	{
