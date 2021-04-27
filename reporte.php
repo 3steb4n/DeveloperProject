@@ -34,12 +34,12 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <a href="?c=Rol&a=Crud" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                                    <a href="HorarioGrupoReporte.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                                                         <i class="fas fa-file-alt"></i> Horario Grupo
                                                     </a>
                                                 </td>
                                                 <td>
-                                                    <a href="?c=Rol&a=Crud" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                                    <a href="ReporteDocente.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                                                         <i class="fas fa-file-alt"></i> Horario Docente
                                                     </a>
                                                 </td>
