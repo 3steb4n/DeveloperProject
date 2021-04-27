@@ -6,7 +6,7 @@
     $_GET['a'] = "hOr==";
     if(isset($_GET['a'])){
         $IdMenu          = decrypt($_GET['a']);
-        $Oferta_Grupos   = $ObjetosPermisos->Horario_Grupo($_GET['idOferta']);
+        $Oferta_Grupos   = $ObjetosPermisos->Horario_Grupo($_GET['idOferta'], 'a');
         //$Tipocurso = $ObjetosPermisos->Tipo_Curso();
     }
             
