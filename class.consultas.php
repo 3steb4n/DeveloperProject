@@ -232,15 +232,29 @@ class Permisos
 		return $this->permisos;
 	}
 
-	/*Oferta grupos Academica*/
-	/*public function Oferta_Grupos($id)
+	public function Anuncios()
 	{
-		$consulta = "SELECT G.SEMESTRE, G.CURSO FROM grupo_oferta AS GO INNER JOIN grupo AS G ON GO.ID_GRUPO = G.ID INNER JOIN oferta AS O";
-		$consulta = $consulta." ON GO.ID_OFERTA = O.ID WHERE GO.ID_OFERTA=".$id." AND O.ESTATUS = 1";
+		$consulta = "SELECT categorias.NOMBRE_CATEGORIA, subcategorias.NOMBRE_SUBCATEGORIA, vender.DETALLES, vender.VALOR, vender.CANTIDAD, vender.Foto FROM vender INNER JOIN categorias ON vender.ID_CATEGORIA = categorias.ID INNER JOIN subcategorias ON vender.ID_SUBCATEGORIA = subcategorias.ID";
 		$conexion = new conectorDB;
 		$this->permisos = $conexion->EjecutarSentencia($consulta);
 		return $this->permisos;
-	}*/
+	}
+
+	public function Categoria()
+	{
+		$consulta = "SELECT * FROM categorias order by ID ASC";
+		$conexion = new conectorDB;
+		$this->permisos = $conexion->EjecutarSentencia($consulta);
+		return $this->permisos;
+	}
+
+	public function SubCategoria($cate)
+	{
+		$consulta = "SELECT * FROM subcategorias WHERE ID_CATEGORIAS = '$cate'";
+		$conexion = new conectorDB;
+		$this->permisos = $conexion->EjecutarSentencia($consulta);
+		return $this->permisos;
+	}
 
 	public function Oferta_Grupos()
 	{
