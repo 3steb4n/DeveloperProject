@@ -13,7 +13,7 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
 if(isset($_GET['del']))
 		  {
 		          mysqli_query($con,"delete from products where id = '".$_GET['id']."'");
-                  $_SESSION['delmsg']="Product deleted !!";
+                  $_SESSION['delmsg']="PProducto eliminado correctamente";
 		  }
 
 ?>
@@ -36,8 +36,8 @@ if(isset($_GET['del']))
 		<div class="container">
 			<div class="row">
 <?php include('include/sidebar.php');?>				
-			<div class="span11">
-					<div class="content">
+			<div class="span11" style="padding-left: 180px;    width: 100%;">
+					<div class="content" style="text-align: left;   width: 90%;">
 
 	<div class="module">
 							<div class="module-head">
@@ -48,7 +48,7 @@ if(isset($_GET['del']))
 {?>
 									<div class="alert alert-error">
 										<button type="button" class="close" data-dismiss="alert">×</button>
-									<strong>Oh vaya!</strong> 	<?php echo htmlentities($_SESSION['delmsg']);?><?php echo htmlentities($_SESSION['delmsg']="");?>
+									   <?php echo htmlentities($_SESSION['delmsg']);?><?php echo htmlentities($_SESSION['delmsg']="");?>
 									</div>
 <?php } ?>
 
