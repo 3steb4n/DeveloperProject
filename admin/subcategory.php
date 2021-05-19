@@ -12,14 +12,14 @@ if(isset($_POST['submit']))
 	$category=$_POST['category'];
 	$subcat=$_POST['subcategory'];
 $sql=mysqli_query($con,"insert into subcategory(categoryid,subcategory) values('$category','$subcat')");
-$_SESSION['msg']="SubCategory Created !!";
+$_SESSION['msg']="Subcategoria creada correctamente";
 
 }
 
 if(isset($_GET['del']))
 		  {
 		          mysqli_query($con,"delete from subcategory where id = '".$_GET['id']."'");
-                  $_SESSION['delmsg']="SubCategory deleted !!";
+                  $_SESSION['delmsg']="Subcategoria eliminada correctamente";
 		  }
 
 ?>
@@ -42,8 +42,8 @@ if(isset($_GET['del']))
 		<div class="container">
 			<div class="row">
 <?php include('include/sidebar.php');?>				
-			<div class="span11">
-					<div class="content">
+			<div class="span11" style="padding-left: 180px;    width: 100%;">
+					<div class="content"  style="text-align: left;   width: 90%;">
 
 						<div class="module">
 							<div class="module-head">
@@ -55,7 +55,7 @@ if(isset($_GET['del']))
 {?>
 									<div class="alert alert-success">
 										<button type="button" class="close" data-dismiss="alert">×</button>
-									<strong>Todo bien!</strong>	<?php echo htmlentities($_SESSION['msg']);?><?php echo htmlentities($_SESSION['msg']="");?>
+									   <?php echo htmlentities($_SESSION['msg']);?><?php echo htmlentities($_SESSION['msg']="");?>
 									</div>
 <?php } ?>
 
@@ -64,7 +64,7 @@ if(isset($_GET['del']))
 {?>
 									<div class="alert alert-error">
 										<button type="button" class="close" data-dismiss="alert">×</button>
-									<strong>Oh vaya!</strong> 	<?php echo htmlentities($_SESSION['delmsg']);?><?php echo htmlentities($_SESSION['delmsg']="");?>
+									    <?php echo htmlentities($_SESSION['delmsg']);?><?php echo htmlentities($_SESSION['delmsg']="");?>
 									</div>
 <?php } ?>
 
