@@ -19,6 +19,7 @@
 					<?php if(strlen($_SESSION['login'])==0)
     {   ?>
 <li><a href="login.php"><i class="icon fa fa-sign-in"></i>Iniciar sesión</a></li>
+<li><a href="registrar-usuarios.php"><i class="icon fa fa-sign-in"></i>Registrar cuenta</a></li>
 <?php }
 else{ ?>
 	
@@ -28,16 +29,6 @@ else{ ?>
 				</ul>
 			</div><!-- /.cnt-account -->
 
-<div class="cnt-block">
-				<ul class="list-unstyled list-inline">
-					<li class="dropdown dropdown-small">
-						<a href="track-orders.php" class="dropdown-toggle" ><span class="key">Seguimiento de pedidos</b></a>
-						
-					</li>
-
-				
-				</ul>
-			</div>
 			
 			<div class="clearfix"></div>
 		</div><!-- /.header-top-inner -->
