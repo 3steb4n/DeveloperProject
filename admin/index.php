@@ -20,7 +20,7 @@ exit();
 }
 else
 {
-$_SESSION['errmsg']="Invalid username or password";
+$_SESSION['errmsg']="Usuario y/o clave invalida";
 $extra="index.php";
 $host  = $_SERVER['HTTP_HOST'];
 $uri  = rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
@@ -35,89 +35,41 @@ exit();
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Tienda Virtual Platea21 | Admin login</title>
+	<title>Admin Login</title>
 	<link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link type="text/css" href="css/theme.css" rel="stylesheet">
 	<link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
 	<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
+	<link rel="stylesheet" href="assets/css/new-login.css">
 </head>
-<body>
-
+<body style="overflow-y:hidden;">
 	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
+		<div class="navbar-inner"  style="background: #1e2833;">
 			<div class="container">
 				<a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
 					<i class="icon-reorder shaded"></i>
 				</a>
-
-			  	<a class="brand" href="index.html">
-			  		Tienda Virtual Platea21 | Admin
+			  	<a class="brand" href="index.html" style="color: white;">
+			  		Admin Login
 			  	</a>
-
-				<div class="nav-collapse collapse navbar-inverse-collapse">
-				
-					<ul class="nav pull-right">
-
-						<li><a href="../">
-						Volver al Portal
-						
-						</a></li>
-
-						
-
-						
-					</ul>
-				</div><!-- /.nav-collapse -->
 			</div>
 		</div><!-- /navbar-inner -->
 	</div><!-- /navbar -->
+    <div class="login-dark" style="margin-top: -100px;">
+        <form method="post">
+		<span style="color:red;" ><?php echo htmlentities($_SESSION['errmsg']); ?><?php echo htmlentities($_SESSION['errmsg']="");?></span>
+            <h2 class="sr-only">Login</h2>
+            <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+            <div class="form-group"><input class="form-control" type="text" name="username" placeholder="Usuario"></div>
+			<br><br>
+            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Clave"></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" name="submit">Ingresar</button></div>
+		</form>
+    </div>
 
-
-
-	<div class="wrapper">
-		<div class="container">
-			<div class="row">
-				<div class="module module-login span4 offset4">
-					<form class="form-vertical" method="post">
-						<div class="module-head">
-							<h3>Iniciar Sesión</h3>
-						</div>
-						<span style="color:red;" ><?php echo htmlentities($_SESSION['errmsg']); ?><?php echo htmlentities($_SESSION['errmsg']="");?></span>
-						<div class="module-body">
-							<div class="control-group">
-								<div class="controls row-fluid">
-									<input class="span12" type="text" id="inputEmail" name="username" placeholder="Usuario">
-								</div>
-							</div>
-							<div class="control-group">
-								<div class="controls row-fluid">
-						<input class="span12" type="password" id="inputPassword" name="password" placeholder="Contraseña">
-								</div>
-							</div>
-						</div>
-						<div class="module-foot">
-							<div class="control-group">
-								<div class="controls clearfix">
-									<button type="submit" class="btn btn-primary pull-right" name="submit">Ingresar</button>
-									
-								</div>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div><!--/.wrapper-->
-
-	<div class="footer">
-		<div class="container">
-			 
-
-			<b class="copyright">&copy; 2020 Tienda Virtual - <a href="https://platea21.blogspot.com/"> https://platea21.blogspot.com</a> </b> Todos los derechos reservados.
-		</div>
-	</div>
 	<script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
 	<script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
 	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
