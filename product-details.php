@@ -158,7 +158,7 @@ while ($rws=mysqli_fetch_array($ret)) {
 					<div class="products">
 						<div class="hot-deal-wrapper">
 							<div class="image">
-								<img src="admin/productimages/<?php echo htmlentities($rws['productName']);?>/<?php echo htmlentities($rws['productImage1']);?>"  width="200" height="334" alt="">
+								<img src="admin/productimages/<?php echo htmlentities($rws['id']);?>/<?php echo htmlentities($rws['productImage1']);?>"  width="200" height="150" alt="">
 							</div>
 							
 						</div><!-- /.hot-deal-wrapper -->
@@ -169,10 +169,10 @@ while ($rws=mysqli_fetch_array($ret)) {
 
 							<div class="product-price">	
 								<span class="price">
-									$. <?php echo htmlentities($rws['productPrice']);?>.00
+									$<?php echo htmlentities($rws['productPrice']);?>.00
 								</span>
 									
-							    <span class="price-before-discount">$.<?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>					
+							    <span class="price-before-discount">$<?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>					
 							
 							</div><!-- /.product-price -->
 							
@@ -368,8 +368,8 @@ $num=mysqli_num_rows($rt);
 
 									<div class="col-sm-6">
 										<div class="price-box">
-											<span class="price">$. <?php echo htmlentities($row['productPrice']);?></span>
-											<span class="price-strike">$.<?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>
+											<span class="price">$<?php echo htmlentities($row['productPrice']);?></span>
+											<span class="price-strike">$<?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>
 										</div>
 									</div>
 
@@ -420,23 +420,6 @@ $num=mysqli_num_rows($rt);
 									
 								</div><!-- /.row -->
 							</div><!-- /.quantity-container -->
-
-							<div class="product-social-link m-t-20 text-right">
-								<span class="social-label">Compartir:</span>
-								<div class="social-icons">
-						            <ul class="list-inline">
-						                <li><a class="fa fa-facebook" href="https://facebook.com/platea21"></a></li>
-						                <li><a class="fa fa-twitter" href="https://facebook.com/platea21"></a></li>
-						                <li><a class="fa fa-linkedin" href="https://facebook.com/platea21"></a></li>
-						                <li><a class="fa fa-rss" href="https://facebook.com/platea21"></a></li>
-						                <li><a class="fa fa-pinterest" href="https://facebook.com/platea21"></a></li>
-						            </ul><!-- /.social-icons -->
-						        </div>
-							</div>
-
-							
-
-							
 						</div><!-- /.product-info -->
 					</div><!-- /.col-sm-7 -->
 				</div><!-- /.row -->
@@ -596,7 +579,7 @@ while($rw=mysqli_fetch_array($qry))
 	<div class="product">		
 		<div class="product-image">
 			<div class="image">
-				<a href="product-details.php?pid=<?php echo htmlentities($rw['id']);?>"><img  src="assets/images/blank.gif" data-echo="admin/productimages/<?php echo htmlentities($rw['id']);?>/<?php echo htmlentities($rw['productImage1']);?>" width="150" height="240" alt=""></a>
+				<a href="product-details.php?pid=<?php echo htmlentities($rw['id']);?>"><img  src="assets/images/blank.gif" data-echo="admin/productimages/<?php echo htmlentities($rw['id']);?>/<?php echo htmlentities($rw['productImage1']);?>" width="200" height="130" alt=""></a>
 			</div><!-- /.image -->			
 
 			                   		   
@@ -610,8 +593,8 @@ while($rw=mysqli_fetch_array($qry))
 
 			<div class="product-price">	
 				<span class="price">
-					$.<?php echo htmlentities($rw['productPrice']);?>			</span>
-										     <span class="price-before-discount">$.
+					$<?php echo htmlentities($rw['productPrice']);?>			</span>
+										     <span class="price-before-discount">$
 										     <?php echo htmlentities($rw['productPriceBeforeDiscount']);?></span>
 									
 			</div><!-- /.product-price -->
@@ -651,7 +634,6 @@ while($rw=mysqli_fetch_array($qry))
 <?php include('includes/brands-slider.php');?>
 </div>
 </div>
-<?php include('includes/footer.php');?>
 
 	<script src="assets/js/jquery-1.11.1.min.js"></script>
 	
