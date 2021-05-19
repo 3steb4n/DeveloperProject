@@ -1,17 +1,17 @@
-<div class="span3">
-					<div class="sidebar">
+<div class="span3" style="margin-left: -3.5%; margin-top: -30px; height: 100vh; position: absolute; background: #1e2833;">
+					<div class="sidebar" >
 
 
 <ul class="widget widget-menu unstyled">
 							<li>
-								<a class="collapsed" data-toggle="collapse" href="#togglePages">
+								<a class="collapsed" data-toggle="collapse" href="#togglePages"  style="background: #3a4857; color: white;">
 									<i class="menu-icon icon-cog"></i>
 									<i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right"></i>
 									Administrar pedidos
 								</a>
 								<ul id="togglePages" class="collapse unstyled">
 									<li>
-										<a href="todays-orders.php">
+										<a href="todays-orders.php"  style="background: #3a4857; color: white;">
 											<i class="icon-tasks"></i>
 											Pedidos de hoy
   <?php
@@ -28,7 +28,7 @@ $num_rows1 = mysqli_num_rows($result);
 										</a>
 									</li>
 									<li>
-										<a href="pending-orders.php">
+										<a href="pending-orders.php"  style="background: #3a4857;  color: white;">
 											<i class="icon-tasks"></i>
 											Pedidos pendientes
 										<?php	
@@ -40,7 +40,7 @@ $num = mysqli_num_rows($ret);
 										</a>
 									</li>
 									<li>
-										<a href="delivered-orders.php">
+										<a href="delivered-orders.php"  style="background: #3a4857;  color: white;">
 											<i class="icon-inbox"></i>
 											Pedidos entregados
 								<?php	
@@ -56,7 +56,7 @@ $num1 = mysqli_num_rows($rt);
 							</li>
 							
 							<li>
-								<a href="manage-users.php">
+								<a href="manage-users.php"  style="background: #3a4857; color: white;">
 									<i class="menu-icon icon-group"></i>
 									Administrar usuarios
 								</a>
@@ -65,18 +65,18 @@ $num1 = mysqli_num_rows($rt);
 
 
 						<ul class="widget widget-menu unstyled">
-                                <li><a href="category.php"><i class="menu-icon icon-tasks"></i> Crear Categoria </a></li>
-                                <li><a href="subcategory.php"><i class="menu-icon icon-tasks"></i>Sub Categoria </a></li>
-                                <li><a href="insert-product.php"><i class="menu-icon icon-paste"></i>Insertar Producto </a></li>
-                                <li><a href="manage-products.php"><i class="menu-icon icon-table"></i>Administrar Productos </a></li>
+                                <li><a href="category.php"  style="background: #3a4857; color: white;"><i class="menu-icon icon-tasks"></i> Crear Categoria </a></li>
+                                <li><a href="subcategory.php"  style="background: #3a4857; color: white;"><i class="menu-icon icon-tasks"></i>Sub Categoria </a></li>
+                                <li><a href="insert-product.php"  style="background: #3a4857; color: white;"><i class="menu-icon icon-paste"></i>Insertar Producto </a></li>
+                                <li><a href="manage-products.php"  style="background: #3a4857; color: white;"><i class="menu-icon icon-table"></i>Administrar Productos </a></li>
                         
                             </ul><!--/.widget-nav-->
 
-						<ul class="widget widget-menu unstyled">
-							<li><a href="user-logs.php"><i class="menu-icon icon-tasks"></i>Usuarios Logs</a></li>
+						<ul class="widget widget-menu unstyled" >
+							<li ><a href="user-logs.php"  style="background: #3a4857; color: white;"><i class="menu-icon icon-tasks"></i>Usuarios Logs</a></li>
 							
 							<li>
-								<a href="logout.php">
+								<a href="logout.php"  style="background: #3a4857; color: white;">
 									<i class="menu-icon icon-signout"></i>
 									Cerrar Sesión
 								</a>

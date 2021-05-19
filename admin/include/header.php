@@ -1,12 +1,12 @@
 <div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
+		<div class="navbar-inner"   style="background: #1e2833; margin: 0;">
 			<div class="container">
 				<a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
 					<i class="icon-reorder shaded"></i>
 				</a>
 
-			  	<a class="brand" href="index.html">
-			  		Tienda Virtual Platea21 | Admin
+			  	<a class="brand" href="#" style="color: white;">
+			  		Panel de Control | Admin
 			  	</a>
 
 				<div class="nav-collapse collapse navbar-inverse-collapse">
