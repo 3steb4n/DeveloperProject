@@ -72,7 +72,7 @@
 	    <meta name="keywords" content="MediaCenter, Template, eCommerce">
 	    <meta name="robots" content="all">
 
-	    <title>Tienda Virtual | Inicio de sesión </title>
+	    <title>Inicio de sesión </title>
 
 	    <!-- Bootstrap Core CSS -->
 	    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -172,7 +172,7 @@ error:function (){}
 		<div class="sign-in-page inner-bottom-sm">
 			<div class="row">
 				<!-- Sign-in -->			
-<div class="col-md-6 col-sm-6 sign-in">
+<div class="col-md-6 col-sm-6 sign-in" style="margin-left: 25%; padding: 10px;">
 	<h4 class="">Iniciar Sesión</h4>
 	<p class="">Hola, bienvenido de vuelta!</p>
 	<form class="register-form outer-top-xs" method="post">
@@ -192,68 +192,18 @@ echo htmlentities($_SESSION['errmsg']="");
 		    <label class="info-title" for="exampleInputPassword1">Contraseña <span>*</span></label>
 		 <input type="password" name="password" class="form-control unicase-form-control text-input" id="exampleInputPassword1" >
 		</div>
-		<div class="radio outer-xs">
-		  	<a href="forgot-password.php" class="forgot-password pull-right">¿Olvidaste tu contraseña?</a>
-		</div>
 	  	<button type="submit" class="btn-upper btn btn-primary checkout-page-button" name="login">Iniciar Sesión</button>
 	</form>					
 </div>
 <!-- Sign-in -->
 
 <!-- create a new account -->
-<div class="col-md-6 col-sm-6 create-new-account">
-	<h4 class="checkout-subtitle">registrate</h4>
-	<p class="text title-tag-line">Crear nueva cuenta.</p>
-	<form class="register-form outer-top-xs" role="form" method="post" name="register" onSubmit="return valid();">
-<div class="form-group">
-	    	<label class="info-title" for="fullname">Nombre completo <span>*</span></label>
-	    	<input type="text" class="form-control unicase-form-control text-input" id="fullname" name="fullname" required="required">
-	  	</div>
 
-
-		<div class="form-group">
-	    	<label class="info-title" for="exampleInputEmail2">Correo electrónico <span>*</span></label>
-	    	<input type="email" class="form-control unicase-form-control text-input" id="email" onBlur="userAvailability()" name="emailid" required >
-	    	       <span id="user-availability-status1" style="font-size:12px;"></span>
-	  	</div>
-
-<div class="form-group">
-	    	<label class="info-title" for="contactno">Teléfono/Celular. <span>*</span></label>
-	    	<input type="text" class="form-control unicase-form-control text-input" id="contactno" name="contactno" maxlength="10" required >
-	  	</div>
-
-<div class="form-group">
-	    	<label class="info-title" for="password">Contraseña. <span>*</span></label>
-	    	<input type="password" class="form-control unicase-form-control text-input" id="password" name="password"  required >
-	  	</div>
-
-<div class="form-group">
-	    	<label class="info-title" for="confirmpassword">Confirmar contraseña. <span>*</span></label>
-	    	<input type="password" class="form-control unicase-form-control text-input" id="confirmpassword" name="confirmpassword" required >
-	  	</div>
-
-
-	  	<button type="submit" name="submit" class="btn-upper btn btn-primary checkout-page-button" id="submit">Registrarse</button>
-	</form>
-	<span class="checkout-subtitle outer-top-xs">Registrate ahora y obten nuestros beneficios :  </span>
-	<div class="checkbox">
-	  	<label class="checkbox">
-		  	Rapidez y seguridad en tu forma de pagos.
-		</label>
-		<label class="checkbox">
-		Seguimiento de pedidos.
-		</label>
-		<label class="checkbox">
-			Revisa tu Historial de pedidos.
-		</label>
-	</div>
-</div>	
 <!-- create a new account -->			</div><!-- /.row -->
 		</div>
 <?php include('includes/brands-slider.php');?>
 </div>
 </div>
-<?php include('includes/footer.php');?>
 	<script src="assets/js/jquery-1.11.1.min.js"></script>
 	
 	<script src="assets/js/bootstrap.min.js"></script>
