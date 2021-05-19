@@ -14,7 +14,7 @@ $remark=$_POST['remark'];//space char
 
 $query=mysqli_query($con,"insert into ordertrackhistory(orderId,status,remark) values('$oid','$status','$remark')");
 $sql=mysqli_query($con,"update orders set orderStatus='$status' where id='$oid'");
-echo "<script>alert('Order updated sucessfully...');</script>";
+echo "<script>alert('Ordern actualizada correctamente');</script>";
 //}
 }
 
@@ -36,17 +36,30 @@ window.print();
 <title>Actualizar pedido</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 <link href="anuj.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=KoHo:wght@200&display=swap');
+b{
+  font-family: 'KoHo', sans-serif;
+}
+h2{
+  font-family: 'KoHo', sans-serif;
+}
+
+</style>
 </head>
 <body>
 
-<div style="margin-left:50px;">
+<div style="margin-left:30%;">
  <form name="updateticket" id="updateticket" method="post"> 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 
     <tr height="50">
-      <td colspan="2" class="fontkink2" style="padding-left:0px;"><div class="fontpink2"> <b>Actualizar estado de pedido !</b></div></td>
+      <td colspan="2" class="fontkink2" style="padding-left:0px;"><div class="fontpink2"> <h2>Actualizar estado de pedido</h2></div></td>
       
     </tr>
+    <br><br><br>
     <tr height="30">
       <td  class="fontkink1"><b>Nro Orden:</b></td>
       <td  class="fontkink"><?php echo $oid;?></td>
@@ -114,14 +127,15 @@ $st='Delivered';
     </tr>
     <tr>
       <td class="fontkink">       </td>
-      <td  class="fontkink"> <input type="submit" name="submit2"  value="Actualizar"   size="40" style="cursor: pointer;" /> &nbsp;&nbsp;   
-      <input name="Submit2" type="submit" class="txtbox4" value="Cerrar Ventana " onClick="return f2();" style="cursor: pointer;"  /></td>
+      <td  class="fontkink"><input type="submit" name="submit2"  value="Actualizar" class="btn btn-primary"   size="40" style="cursor: pointer;" /> &nbsp;&nbsp;   
     </tr>
 <?php } ?>
 </table>
  </form>
 </div>
-
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
 <?php } ?>
