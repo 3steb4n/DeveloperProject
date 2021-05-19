@@ -21,7 +21,7 @@ if(isset($_POST['submit']))
 	$productavailability=$_POST['productAvailability'];
 	
 $sql=mysqli_query($con,"update  products set category='$category',subCategory='$subcat',productName='$productname',productCompany='$productcompany',productPrice='$productprice',productDescription='$productdescription',shippingCharge='$productscharge',productAvailability='$productavailability',productPriceBeforeDiscount='$productpricebd' where id='$pid' ");
-$_SESSION['msg']="Producto actualizado correctamente !!";
+$_SESSION['msg']="Producto actualizado correctamente";
 
 }
 
@@ -67,8 +67,8 @@ $("#suggesstion-box").hide();
 		<div class="container">
 			<div class="row">
 <?php include('include/sidebar.php');?>				
-			<div class="span9">
-					<div class="content">
+			<div class="span9" style="width: 100%;">
+					<div class="content"  style="padding-left: 450px;  text-align: left; width: 50%;">
 
 						<div class="module">
 							<div class="module-head">
@@ -80,7 +80,7 @@ $("#suggesstion-box").hide();
 {?>
 									<div class="alert alert-success">
 										<button type="button" class="close" data-dismiss="alert">×</button>
-									<strong>Todo bien!</strong>	<?php echo htmlentities($_SESSION['msg']);?><?php echo htmlentities($_SESSION['msg']="");?>
+									    <?php echo htmlentities($_SESSION['msg']);?><?php echo htmlentities($_SESSION['msg']="");?>
 									</div>
 <?php } ?>
 
@@ -207,7 +207,7 @@ while($rw=mysqli_fetch_array($query))
 
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Imagen 01 del producto</label>
+<label class="control-label" for="basicinput">Imagen 02 del producto</label>
 <div class="controls">
 <img src="productimages/<?php echo htmlentities($pid);?>/<?php echo htmlentities($row['productImage2']);?>" width="200" height="100"> <a href="update-image2.php?id=<?php echo $row['id'];?>">Change Image</a>
 </div>
@@ -216,7 +216,7 @@ while($rw=mysqli_fetch_array($query))
 
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Imagen 01 del producto</label>
+<label class="control-label" for="basicinput">Imagen 03 del producto</label>
 <div class="controls">
 <img src="productimages/<?php echo htmlentities($pid);?>/<?php echo htmlentities($row['productImage3']);?>" width="200" height="100"> <a href="update-image3.php?id=<?php echo $row['id'];?>">Change Image</a>
 </div>
