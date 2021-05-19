@@ -61,9 +61,9 @@ exit();
 		<span style="color:red;" ><?php echo htmlentities($_SESSION['errmsg']); ?><?php echo htmlentities($_SESSION['errmsg']="");?></span>
             <h2 class="sr-only">Login</h2>
             <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
-            <div class="form-group"><input class="form-control" type="text" name="username" placeholder="Usuario"></div>
+            <div class="form-group"><input class="form-control" type="text" name="username" placeholder="Usuario" autocomplete="off"></div>
 			<br><br>
-            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Clave"></div>
+            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Clave" autocomplete="off"></div>
             <div class="form-group"><button class="btn btn-primary btn-block" name="submit">Ingresar</button></div>
 		</form>
     </div>

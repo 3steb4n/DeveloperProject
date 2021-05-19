@@ -79,7 +79,7 @@ if(isset($_GET['del']))
 <div class="control-group">
 <label class="control-label" for="basicinput">Nombre categoria</label>
 <div class="controls">
-<input type="text" placeholder="Ingrese nombre de categoria"  name="category" class="span8 tip" required>
+<input type="text" placeholder="Ingrese nombre de categoria"  name="category" class="span8 tip" autocomplete="off" required>
 </div>
 </div>
 

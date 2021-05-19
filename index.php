@@ -147,8 +147,6 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 $ret=mysqli_query($con,"select * from products");
 while ($row=mysqli_fetch_array($ret)) 
 {
-	# code...
-
 
 ?>
 
@@ -198,7 +196,7 @@ while ($row=mysqli_fetch_array($ret))
 					<div class="product-slider">
 						<div class="owl-carousel home-owl-carousel custom-carousel owl-theme">
 		<?php
-$ret=mysqli_query($con,"select * from products where category=3");
+$ret=mysqli_query($con,"select * from products where category=4");
 while ($row=mysqli_fetch_array($ret)) 
 {
 	# code...
@@ -308,11 +306,11 @@ while ($row=mysqli_fetch_array($ret))
 				<div class="row">
 					<div class="col-md-6">
 	                   <section class="section">
-	                   	<h3 class="section-title">Camiones</h3>
+	                   	<h3 class="section-title">ABARTH</h3>
 	                   	<div class="owl-carousel homepage-owl-carousel custom-carousel outer-top-xs owl-theme" data-item="2">
 	   
 <?php
-$ret=mysqli_query($con,"select * from products where category=4 and subCategory=4");
+$ret=mysqli_query($con,"select * from products where category = 8");
 while ($row=mysqli_fetch_array($ret)) 
 {
 ?>
@@ -355,10 +353,10 @@ while ($row=mysqli_fetch_array($ret))
 					</div>
 					<div class="col-md-6">
 						<section class="section">
-							<h3 class="section-title">Camiones - TEST 6</h3>
+							<h3 class="section-title">CHEVROLET</h3>
 		                   	<div class="owl-carousel homepage-owl-carousel custom-carousel outer-top-xs owl-theme" data-item="2">
 	<?php
-$ret=mysqli_query($con,"select * from products where category=4 and subCategory=6");
+$ret=mysqli_query($con,"select * from products where category = 11");
 while ($row=mysqli_fetch_array($ret)) 
 {
 ?>
@@ -405,61 +403,6 @@ while ($row=mysqli_fetch_array($ret))
 			</div>
 		<!-- ============================================== TABS : END ============================================== -->
 
-		
-
-	<section class="section featured-product inner-xs wow fadeInUp">
-		<h3 class="section-title">Pick Up</h3>
-		<div class="owl-carousel best-seller custom-carousel owl-theme outer-top-xs">
-			<?php
-$ret=mysqli_query($con,"select * from products where category=6");
-while ($row=mysqli_fetch_array($ret)) 
-{
-	# code...
-
-
-?>
-				<div class="item">
-					<div class="products">
-
-
-
-
-												<div class="product">
-							<div class="product-micro">
-								<div class="row product-micro-row">
-									<div class="col col-xs-6">
-										<div class="product-image">
-											<div class="image">
-												<a href="admin/productimages/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['productImage1']);?>" data-lightbox="image-1" data-title="<?php echo htmlentities($row['productName']);?>">
-													<img data-echo="admin/productimages/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['productImage1']);?>" width="200" height="150" alt="">
-													<div class="zoom-overlay"></div>
-												</a>					
-											</div><!-- /.image -->
-
-										</div><!-- /.product-image -->
-									</div><!-- /.col -->
-									<div class="col col-xs-6">
-										<div class="product-info">
-											<h3 class="name"><a href="product-details.php?pid=<?php echo htmlentities($row['id']);?>"><?php echo htmlentities($row['productName']);?></a></h3>
-											<div class="rating rateit-small"></div>
-											<div class="product-price">	
-												<span class="price">
-													$<?php echo htmlentities($row['productPrice']);?>
-												</span>
-
-											</div><!-- /.product-price -->
-											<div class="action"><a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="lnk btn btn-primary">Agregar a carrito</a></div>
-										</div>
-									</div><!-- /.col -->
-								</div><!-- /.product-micro-row -->
-							</div><!-- /.product-micro -->
-						</div>
-
-
-											</div>
-				</div><?php } ?>
-							</div>
-		</section>
 <?php include('includes/brands-slider.php');?>
 </div>
 </div>

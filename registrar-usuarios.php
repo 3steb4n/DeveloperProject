@@ -72,7 +72,7 @@
 	    <meta name="keywords" content="MediaCenter, Template, eCommerce">
 	    <meta name="robots" content="all">
 
-	    <title>Inicio de sesión </title>
+	    <title>Tienda Virtual | Registro </title>
 
 	    <!-- Bootstrap Core CSS -->
 	    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -112,7 +112,7 @@ function valid()
 {
  if(document.register.password.value!= document.register.confirmpassword.value)
 {
-alert("Password and Confirm Password Field do not match  !!");
+alert("Los campos de contraseña y confirmar contraseña con coinciden");
 document.register.confirmpassword.focus();
 return false;
 }
@@ -161,7 +161,7 @@ error:function (){}
 		<div class="breadcrumb-inner">
 			<ul class="list-inline list-unstyled">
 				<li><a href="home.html">Inicio</a></li>
-				<li class='active'>Authentication</li>
+				<li class='active'>Registro</li>
 			</ul>
 		</div><!-- /.breadcrumb-inner -->
 	</div><!-- /.container -->
@@ -172,34 +172,45 @@ error:function (){}
 		<div class="sign-in-page inner-bottom-sm">
 			<div class="row">
 				<!-- Sign-in -->			
-<div class="col-md-6 col-sm-6 sign-in" style="margin-left: 25%; padding: 10px;">
-	<h4 class="">Iniciar Sesión</h4>
-	<p class="">Hola, bienvenido de vuelta!</p>
-	<form class="register-form outer-top-xs" method="post">
-	<span style="color:red;" >
-<?php
-echo htmlentities($_SESSION['errmsg']);
-?>
-<?php
-echo htmlentities($_SESSION['errmsg']="");
-?>
-	</span>
-		<div class="form-group">
-		    <label class="info-title" for="exampleInputEmail1">Correo electrónico <span>*</span></label>
-		    <input type="email" name="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" autocomplete="off">
-		</div>
-	  	<div class="form-group">
-		    <label class="info-title" for="exampleInputPassword1">Contraseña <span>*</span></label>
-		 <input type="password" name="password" class="form-control unicase-form-control text-input" id="exampleInputPassword1" autocomplete="off">
-		</div>
-	  	<button type="submit" class="btn-upper btn btn-primary checkout-page-button" name="login">Iniciar Sesión</button>
-	  	<a class="btn-upper btn btn-primary checkout-page-button" href="registrar-usuarios.php">Registrarse</a>
-	</form>					
-</div>
 <!-- Sign-in -->
 
 <!-- create a new account -->
+<div class="col-md-6 col-sm-6 create-new-account" style="margin-left: 20%; width: 70%; border: 1px solid #7a7676; padding: 25px; border-radius: 10px;">
+	<h4 class="checkout-subtitle">registrate</h4>
+	<p class="text title-tag-line">Crear nueva cuenta.</p>
+	<form class="register-form outer-top-xs" role="form" method="post" name="register" onSubmit="return valid();">
+<div class="form-group">
+	    	<label class="info-title" for="fullname">Nombre completo <span>*</span></label>
+	    	<input type="text" class="form-control unicase-form-control text-input" id="fullname" name="fullname" required="required">
+	  	</div>
 
+
+		<div class="form-group">
+	    	<label class="info-title" for="exampleInputEmail2">Correo electrónico <span>*</span></label>
+	    	<input type="email" class="form-control unicase-form-control text-input" id="email" onBlur="userAvailability()" name="emailid" required >
+	    	       <span id="user-availability-status1" style="font-size:12px;"></span>
+	  	</div>
+
+<div class="form-group">
+	    	<label class="info-title" for="contactno">Teléfono/Celular. <span>*</span></label>
+	    	<input type="text" class="form-control unicase-form-control text-input" id="contactno" name="contactno" maxlength="10" required >
+	  	</div>
+
+<div class="form-group">
+	    	<label class="info-title" for="password">Contraseña. <span>*</span></label>
+	    	<input type="password" class="form-control unicase-form-control text-input" id="password" name="password"  required >
+	  	</div>
+
+<div class="form-group">
+	    	<label class="info-title" for="confirmpassword">Confirmar contraseña. <span>*</span></label>
+	    	<input type="password" class="form-control unicase-form-control text-input" id="confirmpassword" name="confirmpassword" required >
+	  	</div>
+
+
+	  	<button type="submit" name="submit" class="btn-upper btn btn-primary checkout-page-button" id="submit">Registrarse</button>
+	  	<a class="btn-upper btn btn-primary checkout-page-button" href="login.php">Inicio de Sesión</a>
+	</form>
+</div>	
 <!-- create a new account -->			</div><!-- /.row -->
 		</div>
 <?php include('includes/brands-slider.php');?>
