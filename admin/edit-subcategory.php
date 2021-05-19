@@ -17,7 +17,7 @@ if(isset($_POST['submit']))
 	$subcat=$_POST['subcategory'];
 	$id=intval($_GET['id']);
 $sql=mysqli_query($con,"update subcategory set categoryid='$category',subcategory='$subcat',updationDate='$currentTime' where id='$id'");
-$_SESSION['msg']="Sub-Category Updated !!";
+$_SESSION['msg']="Actualizado correctamente";
 
 }
 
@@ -41,8 +41,8 @@ $_SESSION['msg']="Sub-Category Updated !!";
 		<div class="container">
 			<div class="row">
 <?php include('include/sidebar.php');?>				
-			<div class="span9">
-					<div class="content">
+			<div class="span9"   style="width: 100%;">
+					<div class="content"  style="padding-left: 550px;  text-align: left; width: 50%;">
 
 						<div class="module">
 							<div class="module-head">
@@ -54,7 +54,7 @@ $_SESSION['msg']="Sub-Category Updated !!";
 {?>
 									<div class="alert alert-success">
 										<button type="button" class="close" data-dismiss="alert">×</button>
-									<strong>Todo bien!</strong>	<?php echo htmlentities($_SESSION['msg']);?><?php echo htmlentities($_SESSION['msg']="");?>
+									<?php echo htmlentities($_SESSION['msg']);?><?php echo htmlentities($_SESSION['msg']="");?>
 									</div>
 <?php } ?>
 
