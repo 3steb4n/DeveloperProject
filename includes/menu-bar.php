@@ -1,19 +1,11 @@
-<div class="header-nav animate-dropdown">
+<div class="header-nav animate-dropdown" style="background: black;">
     <div class="container">
         <div class="yamm navbar navbar-default" role="navigation">
-            <div class="navbar-header">
-                <button data-target="#mc-horizontal-menu-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
-                    <span class="sr-only">Menu despegable</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
             <div class="nav-bg-class">
-                <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
-	<div class="nav-outer">
+                <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse"  style="background: black;">
+	<div class="nav-outer" style="background: black;">
 		<ul class="nav navbar-nav">
-			<li class="active dropdown yamm-fw">
+			<li class="active dropdown yamm-fw"  style="background: black;"> 
 				<a href="index.php" data-hover="dropdown" class="dropdown-toggle">Inicio</a>
 				
 			</li>
@@ -22,7 +14,7 @@ while($row=mysqli_fetch_array($sql))
 {
     ?>
 
-			<li class="dropdown yamm">
+			<li class="dropdown yamm"  style="background: black;">
 				<a href="category.php?cid=<?php echo $row['id'];?>"> <?php echo $row['categoryName'];?></a>
 			
 			</li>
@@ -30,7 +22,7 @@ while($row=mysqli_fetch_array($sql))
 
 			
 		</ul><!-- /.navbar-nav -->
-		<div class="clearfix"></div>				
+		<div class="clearfix"  style="background: black;"></div>				
 	</div>
 </div>
 
