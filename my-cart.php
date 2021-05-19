@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
 
 			}
 		}
-			echo "<script>alert('Your Cart hasbeen Updated');</script>";
+			echo "<script>alert('Tu carrito de compas fue actualizado!');</script>";
 		}
 	}
 // Code for Remove a Product from Cart
@@ -146,10 +146,7 @@ if(!empty($_SESSION['cart'])){
 					<th class="cart-romove item">Eliminar</th>
 					<th class="cart-description item">Imagen</th>
 					<th class="cart-product-name item">Nombre de producto</th>
-			
-					<th class="cart-qty item">Cantidad</th>
 					<th class="cart-sub-total item">Precio unitario</th>
-					<th class="cart-sub-total item">Costo de envío</th>
 					<th class="cart-total last-item">Total</th>
 				</tr>
 			</thead><!-- /thead -->
@@ -191,7 +188,7 @@ if(!empty($_SESSION['cart'])){
 					<td class="romove-item"><input type="checkbox" name="remove_code[]" value="<?php echo htmlentities($row['id']);?>" /></td>
 					<td class="cart-image">
 						<a class="entry-thumbnail" href="detail.html">
-						    <img src="admin/productimages/<?php echo $row['id'];?>/<?php echo $row['productImage1'];?>" alt="" width="114" height="146">
+						    <img src="admin/productimages/<?php echo $row['id'];?>/<?php echo $row['productImage1'];?>" alt="" width="114" height="100">
 						</a>
 					</td>
 					<td class="cart-product-name-info">
@@ -214,20 +211,8 @@ $num=mysqli_num_rows($rt);
 								<?php } ?>
 							</div>
 						</div><!-- /.row -->
-						
 					</td>
-					<td class="cart-product-quantity">
-						<div class="quant-input">
-				                <div class="arrows">
-				                  <div class="arrow plus gradient"><span class="ir"><i class="icon fa fa-sort-asc"></i></span></div>
-				                  <div class="arrow minus gradient"><span class="ir"><i class="icon fa fa-sort-desc"></i></span></div>
-				                </div>
-				             <input type="text" value="<?php echo $_SESSION['cart'][$row['id']]['quantity']; ?>" name="quantity[<?php echo $row['id']; ?>]">
-				             
-			              </div>
-		            </td>
-					<td class="cart-product-sub-total"><span class="cart-sub-total-price"><?php echo "$"." ".$row['productPrice']; ?>.00</span></td>
-<td class="cart-product-sub-total"><span class="cart-sub-total-price"><?php echo "$"." ".$row['shippingCharge']; ?>.00</span></td>
+<td class="cart-product-sub-total"><span class="cart-sub-total-price"><?php echo "$".$row['shippingCharge']; ?>.00</span></td>
 
 					<td class="cart-product-grand-total"><span class="cart-grand-total-price"><?php echo ($_SESSION['cart'][$row['id']]['quantity']*$row['productPrice']+$row['shippingCharge']); ?>.00</span></td>
 				</tr>
@@ -333,7 +318,6 @@ echo "Tu carrito de compras esta vacío";
 <?php echo include('includes/brands-slider.php');?>
 </div>
 </div>
-<?php include('includes/footer.php');?>
 
 	<script src="assets/js/jquery-1.11.1.min.js"></script>
 	
