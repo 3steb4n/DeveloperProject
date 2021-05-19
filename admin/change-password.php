@@ -18,11 +18,11 @@ $num=mysqli_fetch_array($sql);
 if($num>0)
 {
  $con=mysqli_query($con,"update admin set password='".md5($_POST['newpassword'])."', updationDate='$currentTime' where username='".$_SESSION['alogin']."'");
-$_SESSION['msg']="Password Changed Successfully !!";
+$_SESSION['msg']="Clave actualizada correctamente";
 }
 else
 {
-$_SESSION['msg']="Old Password not match !!";
+$_SESSION['msg']="Clave vieja coincide con la nueva";
 }
 }
 ?>
@@ -42,7 +42,7 @@ function valid()
 {
 if(document.chngpwd.password.value=="")
 {
-alert("Current Password Filed is Empty !!");
+alert("¡El campo de contraseña actual está vacío!");
 document.chngpwd.password.focus();
 return false;
 }
@@ -54,13 +54,13 @@ return false;
 }
 else if(document.chngpwd.confirmpassword.value=="")
 {
-alert("Confirm Password Filed is Empty !!");
+alert("¡El campo de la nueva contraseña está vacío!");
 document.chngpwd.confirmpassword.focus();
 return false;
 }
 else if(document.chngpwd.newpassword.value!= document.chngpwd.confirmpassword.value)
 {
-alert("Password and Confirm Password Field do not match  !!");
+alert("¡La contraseña y el campo Confirmar contraseña no coinciden!");
 document.chngpwd.confirmpassword.focus();
 return false;
 }
@@ -72,11 +72,11 @@ return true;
 <?php include('include/header.php');?>
 
 	<div class="wrapper">
-		<div class="container">
+		<div class="container" >
 			<div class="row">
 <?php include('include/sidebar.php');?>				
-			<div class="span9">
-					<div class="content">
+			<div class="span9" style="width: 100%;">
+					<div class="content" style="padding-left: 400px;  text-align: left; width: 50%;">
 
 						<div class="module">
 							<div class="module-head">
@@ -138,8 +138,6 @@ return true;
 			</div>
 		</div><!--/.container-->
 	</div><!--/.wrapper-->
-
-<?php include('include/footer.php');?>
 
 	<script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
 	<script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
