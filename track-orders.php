@@ -87,7 +87,6 @@ Ingrese su código/número de pedido en el cuadro a continuación y presione ENT
 <?php include('includes/brands-slider.php');?>
 </div>
 </div>
-<?php include('includes/footer.php');?>
 	<script src="assets/js/jquery-1.11.1.min.js"></script>
 	
 	<script src="assets/js/bootstrap.min.js"></script>
