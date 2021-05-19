@@ -17,7 +17,7 @@ if(isset($_POST['submit']))
 	$description=$_POST['description'];
 	$id=intval($_GET['id']);
 $sql=mysqli_query($con,"update category set categoryName='$category',categoryDescription='$description',updationDate='$currentTime' where id='$id'");
-$_SESSION['msg']="Category Updated !!";
+$_SESSION['msg']="Categoria actualizada correctamente";
 
 }
 
@@ -41,8 +41,8 @@ $_SESSION['msg']="Category Updated !!";
 		<div class="container">
 			<div class="row">
 <?php include('include/sidebar.php');?>				
-			<div class="span9">
-					<div class="content">
+			<div class="span9"  style="width: 100%;">
+					<div class="content" style="padding-left: 550px;  text-align: left; width: 50%;">
 
 						<div class="module">
 							<div class="module-head">
