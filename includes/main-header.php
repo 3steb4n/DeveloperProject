@@ -20,19 +20,17 @@
 <div class="logo">
 	<a href="index.php">
 		
-		<h2>Tienda Virtual Platea21</h2>
-
+		<h2 style="color: green;">Venta de Autos Online</h2>
 	</a>
 </div>		
 </div>
 <div class="col-xs-12 col-sm-12 col-md-6 top-search-holder">
-<div class="search-area">
+<div class="search-area" style="margin-top: 40px;">
     <form name="search" method="post" action="search-result.php">
-        <div class="control-group">
+        <div class="control-group" >
 
-            <input class="search-field" placeholder="Buscar aqui..." name="product" required="required" />
-
-            <button class="search-button" type="submit" name="search"></button>    
+            <input class="search-field" placeholder="Buscar aqui..." name="product" required="required" style="border: 1px solid #5e5d5d;" />
+            <button class="search-button" type="submit" name="search" style="border: 1px solid #5e5d5d;"></button>    
 
         </div>
     </form>
@@ -50,7 +48,7 @@ if(!empty($_SESSION['cart'])){
 				<div class="total-price-basket">
 					<span class="lbl">Carrito -</span>
 					<span class="total-price">
-						<span class="sign">$.</span>
+						<span class="sign">$</span>
 						<span class="value"><?php echo $_SESSION['tp']; ?></span>
 					</span>
 				</div>
@@ -87,7 +85,7 @@ if(!empty($_SESSION['cart'])){
 					<div class="row">
 						<div class="col-xs-4">
 							<div class="image">
-								<a href="detail.html"><img  src="admin/productimages/<?php echo $row['id'];?>/<?php echo $row['productImage1'];?>" width="35" height="50" alt=""></a>
+								<a href="detail.html"><img  src="admin/productimages/<?php echo $row['id'];?>/<?php echo $row['productImage1'];?>" width="35" height="30" alt=""></a>
 							</div>
 						</div>
 						<div class="col-xs-7">
@@ -106,7 +104,7 @@ if(!empty($_SESSION['cart'])){
 			<div class="clearfix cart-total">
 				<div class="pull-right">
 					
-						<span class="text">Total :</span><span class='price'>$.<?php echo $_SESSION['tp']="$totalprice". ".00"; ?></span>
+						<span class="text">Total :</span><span class='price'>$<?php echo $_SESSION['tp']="$totalprice". ".00"; ?></span>
 						
 				</div>
 			
@@ -120,14 +118,15 @@ if(!empty($_SESSION['cart'])){
 		</ul><!-- /.dropdown-menu-->
 	</div><!-- /.dropdown-cart -->
 <?php } else { ?>
+	<br><br>
 <div class="dropdown dropdown-cart">
 		<a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
 			<div class="items-cart-inner">
 				<div class="total-price-basket">
 					<span class="lbl">carrito -</span>
 					<span class="total-price">
-						<span class="sign">$.</span>
-						<span class="value">00.00</span>
+						<span class="sign">$</span>
+						<span class="value">0</span>
 					</span>
 				</div>
 				<div class="basket">
