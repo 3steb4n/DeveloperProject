@@ -17,7 +17,7 @@ else{
 		$query=mysqli_query($con,"update users set billingAddress='$baddress',billingState='$bstate',billingCity='$bcity',billingPincode='$bpincode' where id='".$_SESSION['id']."'");
 		if($query)
 		{
-echo "<script>alert('Dirección de facturación a sido actualizada');</script>";
+echo "<script>alert('Dirección de facturación se ha sido actualizada correctamente');</script>";
 		}
 	}
 
@@ -32,7 +32,7 @@ echo "<script>alert('Dirección de facturación a sido actualizada');</script>";
 		$query=mysqli_query($con,"update users set shippingAddress='$saddress',shippingState='$sstate',shippingCity='$scity',shippingPincode='$spincode' where id='".$_SESSION['id']."'");
 		if($query)
 		{
-echo "<script>alert('Shipping Address has been updated');</script>";
+echo "<script>alert('Dirección de facturación se ha sido actualizada correctamente');</script>";
 		}
 	}
 
@@ -232,7 +232,6 @@ while($row=mysqli_fetch_array($query))
 
 </div>
 </div>
-<?php include('includes/footer.php');?>
 	<script src="assets/js/jquery-1.11.1.min.js"></script>
 	
 	<script src="assets/js/bootstrap.min.js"></script>
