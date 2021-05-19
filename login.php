@@ -13,11 +13,11 @@
 
 		if($query)
 		{
-			echo "<script>alert('You are successfully register');</script>";
+			echo "<script>alert('Registrado correctamente');</script>";
 		}
 		else
 		{
-		echo "<script>alert('Not register something went worng');</script>";
+		echo "<script>alert('Error interno del sistema');</script>";
 		}
 	}
 
@@ -53,7 +53,7 @@
 			$host  = $_SERVER['HTTP_HOST'];
 			$uri  = rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
 			header("location:http://$host$uri/$extra");
-			$_SESSION['errmsg']="Invalid email id or Password";
+			$_SESSION['errmsg']="Email/Clave incorrecto";
 			exit();
 		}
 	}
@@ -172,7 +172,7 @@ error:function (){}
 		<div class="sign-in-page inner-bottom-sm">
 			<div class="row">
 				<!-- Sign-in -->			
-<div class="col-md-6 col-sm-6 sign-in" style="margin-left: 25%; padding: 10px;">
+<div class="col-md-6 col-sm-6 sign-in" style="margin-left: 25%; padding: 25px; width: 50%; border: 1px solid #7a7676;  border-radius: 10px;">
 	<h4 class="">Iniciar Sesión</h4>
 	<p class="">Hola, bienvenido de vuelta!</p>
 	<form class="register-form outer-top-xs" method="post">
