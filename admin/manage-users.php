@@ -36,8 +36,8 @@ if(isset($_GET['del']))
 		<div class="container">
 			<div class="row">
 <?php include('include/sidebar.php');?>				
-			<div class="span11">
-					<div class="content">
+			<div class="span11"  style="padding-left: 180px;    width: 100%;">
+					<div class="content" style="text-align: right;   width: 90%;">
 
 	<div class="module">
 							<div class="module-head">
