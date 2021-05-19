@@ -17,7 +17,7 @@ if(isset($_POST['submit']))
 
 	move_uploaded_file($_FILES["productimage3"]["tmp_name"],"productimages/$pid/".$_FILES["productimage3"]["name"]);
 	$sql=mysqli_query($con,"update  products set productImage3='$productimage3' where id='$pid' ");
-$_SESSION['msg']="Product Image Updated Successfully !!";
+$_SESSION['msg']="Imagen actualiza correctamente";
 
 }
 
@@ -63,8 +63,8 @@ $("#suggesstion-box").hide();
 		<div class="container">
 			<div class="row">
 <?php include('include/sidebar.php');?>				
-			<div class="span9">
-					<div class="content">
+			<div class="span9"  style="width: 100%;">
+					<div class="content"   style="padding-left: 500px;  text-align: left; width: 50%;">
 
 						<div class="module">
 							<div class="module-head">
@@ -76,7 +76,7 @@ $("#suggesstion-box").hide();
 {?>
 									<div class="alert alert-success">
 										<button type="button" class="close" data-dismiss="alert">×</button>
-									<strong>Well done!</strong>	<?php echo htmlentities($_SESSION['msg']);?><?php echo htmlentities($_SESSION['msg']="");?>
+									    <?php echo htmlentities($_SESSION['msg']);?><?php echo htmlentities($_SESSION['msg']="");?>
 									</div>
 <?php } ?>
 
