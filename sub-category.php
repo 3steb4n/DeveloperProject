@@ -149,7 +149,7 @@ while($row=mysqli_fetch_array($sql))
 	<div id="category" class="category-carousel hidden-xs">
 		<div class="item">	
 			<div class="image">
-				<img src="assets/images/banners/cat-banner-2.jpg" alt="" class="img-responsive">
+				<img src="https://www.toyota.lk/wp-content/uploads/2017/03/vehicle-details-banner.jpg" alt="" class="img-responsive">
 			</div>
 			<div class="container-fluid">
 				<div class="caption vertical-top text-left">
@@ -162,7 +162,7 @@ while($row=mysqli_fetch_array($sql))
 {
     ?>
 
-					<div class="excerpt hidden-sm hidden-md">
+					<div class="excerpt hidden-sm hidden-md" style="color: white;">
 						<?php echo htmlentities($row['subcategory']);?>
 					</div>
 			<?php } ?>
@@ -171,6 +171,7 @@ while($row=mysqli_fetch_array($sql))
 			</div><!-- /.container-fluid -->
 		</div>
 </div>
+<br><br><br><br><br><br>
 
 				<div class="search-result-container">
 					<div id="myTabContent" class="tab-content">
@@ -189,7 +190,7 @@ while ($row=mysqli_fetch_array($ret))
 	<div class="product">		
 		<div class="product-image">
 			<div class="image">
-				<a href="product-details.php?pid=<?php echo htmlentities($row['id']);?>"><img  src="assets/images/blank.gif" data-echo="admin/productimages/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['productImage1']);?>" alt="" width="200" height="300"></a>
+				<a href="product-details.php?pid=<?php echo htmlentities($row['id']);?>"><img  src="assets/images/blank.gif" data-echo="admin/productimages/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['productImage1']);?>" alt="" width="220" height="120"></a>
 			</div><!-- /.image -->			                      		   
 		</div><!-- /.product-image -->
 			
@@ -201,8 +202,8 @@ while ($row=mysqli_fetch_array($ret))
 
 			<div class="product-price">	
 				<span class="price">
-					$. <?php echo htmlentities($row['productPrice']);?>			</span>
-										     <span class="price-before-discount">$. <?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>
+					$<?php echo htmlentities($row['productPrice']);?>			</span>
+										     <span class="price-before-discount">$<?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>
 									
 			</div><!-- /.product-price -->
 			
@@ -263,7 +264,6 @@ while ($row=mysqli_fetch_array($ret))
 
 </div>
 </div>
-<?php include('includes/footer.php');?>
 	<script src="assets/js/jquery-1.11.1.min.js"></script>
 	
 	<script src="assets/js/bootstrap.min.js"></script>
