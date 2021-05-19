@@ -4,85 +4,39 @@
 			<div id="brand-slider" class="owl-carousel brand-slider custom-carousel owl-theme">
 				<div class="item">
 					<a href="#" class="image">
-						<img data-echo="brandsimage/aoc.jpg" src="assets/images/blank.gif" alt="">
+						<img data-echo="brandsimage/1.jpg" src="assets/images/blank.gif" alt="" width="60" height="40">
 					</a>	
 				</div><!--/.item-->
 
 				<div class="item">
 					<a href="#" class="image">
-						<img data-echo="brandsimage/bajaj.jpg" src="assets/images/blank.gif" alt="">
+						<img data-echo="brandsimage/2.jpg" src="assets/images/blank.gif" alt="" width="60" height="40">
 					</a>	
 				</div><!--/.item-->
 
 				<div class="item">
 					<a href="#" class="image">
-						<img data-echo="brandsimage/blackberry.jpg" src="assets/images/blank.gif" alt="">
+						<img data-echo="brandsimage/3.png" src="assets/images/blank.gif" alt="" width="60" height="40">
 					</a>	
 				</div><!--/.item-->
 
 				<div class="item">
 					<a href="#" class="image">
-						<img data-echo="brandsimage/canon.jpg" src="assets/images/blank.gif" alt="">
+						<img data-echo="brandsimage/4.png" src="assets/images/blank.gif" alt="" width="60" height="40">
 					</a>	
 				</div>
 
 				<div class="item">
 					<a href="#" class="image">
-						<img data-echo="brandsimage/compas.jpg" src="assets/images/blank.gif" alt="">
+						<img data-echo="brandsimage/5.png" src="assets/images/blank.gif" alt="" width="60" height="40">
 					</a>	
 				</div>
 
 				<div class="item">
 					<a href="#" class="image">
-						<img data-echo="brandsimage/daikin.jpg" src="assets/images/blank.gif" alt="">
+						<img data-echo="brandsimage/6.png" src="assets/images/blank.gif" alt="" width="60" height="40">
 					</a>	
 				</div>
-
-				<div class="item">
-					<a href="#" class="image">
-						<img data-echo="brandsimage/dell.jpg" src="assets/images/blank.gif" alt="">
-					</a>	
-				</div>
-<div class="item">
-					<a href="#" class="image">
-						<img data-echo="brandsimage/samsung.jpg" src="assets/images/blank.gif" alt="">
-					</a>	
-				</div>
-				<div class="item">
-					<a href="#" class="image">
-						<img data-echo="brandsimage/hcl.jpg" src="assets/images/blank.gif" alt="">
-					</a>	
-				</div>
-
-				
-
-				<div class="item">
-					<a href="#" class="image">
-						<img data-echo="brandsimage/sony.jpg" src="assets/images/blank.gif" alt="">
-					</a>	
-				</div>
-
-				<div class="item">
-					<a href="#" class="image">
-						<img data-echo="brandsimage/voltas.jpg" src="assets/images/blank.gif" alt="">
-					</a>	
-				</div>
-
-				<div class="item">
-					<a href="#" class="image">
-						<img data-echo="brandsimage/lg.jpg" src="assets/images/blank.gif" alt="">
-					</a>	
-				</div>
-
-				<div class="item">
-					<a href="#" class="image">
-						<img data-echo="brandsimage/lenovo.jpg" src="assets/images/blank.gif" alt="">
-					</a>	
-				</div>
-
-
-
-
 		    </div><!-- /.owl-carousel #logo-slider -->
 	</div><!-- /.logo-slider-inner -->
 	
