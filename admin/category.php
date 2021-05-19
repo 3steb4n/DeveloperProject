@@ -16,14 +16,14 @@ if(isset($_POST['submit']))
 	$category=$_POST['category'];
 	$description=$_POST['description'];
 $sql=mysqli_query($con,"insert into category(categoryName,categoryDescription) values('$category','$description')");
-$_SESSION['msg']="Category Created !!";
+$_SESSION['msg']="Categoria creada correctamente";
 
 }
 
 if(isset($_GET['del']))
 		  {
 		          mysqli_query($con,"delete from category where id = '".$_GET['id']."'");
-                  $_SESSION['delmsg']="Category deleted !!";
+                  $_SESSION['delmsg']="Categoria eleminada correctamente";
 		  }
 
 ?>
@@ -46,12 +46,12 @@ if(isset($_GET['del']))
 		<div class="container">
 			<div class="row">
 <?php include('include/sidebar.php');?>				
-			<div class="span11">
-					<div class="content">
+			<div class="span11" style="padding-left: 180px;    width: 100%;">
+					<div class="content" style="text-align: left;   width: 90%;">
 
 						<div class="module">
 							<div class="module-head">
-								<h3>Categoria</h3>
+								<h3>Crear Categoria</h3>
 							</div>
 							<div class="module-body">
 
@@ -59,7 +59,7 @@ if(isset($_GET['del']))
 {?>
 									<div class="alert alert-success">
 										<button type="button" class="close" data-dismiss="alert">×</button>
-									<strong>Todo bien!</strong>	<?php echo htmlentities($_SESSION['msg']);?><?php echo htmlentities($_SESSION['msg']="");?>
+									<?php echo htmlentities($_SESSION['msg']);?><?php echo htmlentities($_SESSION['msg']="");?>
 									</div>
 <?php } ?>
 
@@ -68,7 +68,7 @@ if(isset($_GET['del']))
 {?>
 									<div class="alert alert-error">
 										<button type="button" class="close" data-dismiss="alert">×</button>
-									<strong>Oh vaya!</strong> 	<?php echo htmlentities($_SESSION['delmsg']);?><?php echo htmlentities($_SESSION['delmsg']="");?>
+									<?php echo htmlentities($_SESSION['delmsg']);?><?php echo htmlentities($_SESSION['delmsg']="");?>
 									</div>
 <?php } ?>
 
@@ -132,7 +132,7 @@ while($row=mysqli_fetch_array($query))
 											<td><?php echo htmlentities($row['updationDate']);?></td>
 											<td>
 											<a href="edit-category.php?id=<?php echo $row['id']?>" ><i class="icon-edit"></i></a>
-											<a href="category.php?id=<?php echo $row['id']?>&del=delete" onClick="return confirm('Are you sure you want to delete?')"><i class="icon-remove-sign"></i></a></td>
+											<a href="category.php?id=<?php echo $row['id']?>&del=delete" onClick="return confirm('¿Estás seguro que quieres eliminar el registro?')"><i class="icon-remove-sign"></i></a></td>
 										</tr>
 										<?php $cnt=$cnt+1; } ?>
 										
